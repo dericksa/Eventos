@@ -8,20 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Desktop
+namespace Desktop.FormCadastro
 {
-    public partial class formLogin : Form
+    public partial class formCadastroAluno : Form
     {
-        public formLogin()
+        public formCadastroAluno()
         {
             InitializeComponent();
         }
-
-        private void formLogin_Load(object sender, EventArgs e)
-        {
-
-        }
-
 
     }
 }

@@ -10,18 +10,16 @@ using System.Windows.Forms;
 
 namespace Desktop
 {
-    public partial class formLogin : Form
+    public partial class formEscCadastro : Form
     {
-        public formLogin()
+        public formEscCadastro()
         {
             InitializeComponent();
         }
 
-        private void formLogin_Load(object sender, EventArgs e)
+        private void formEscCadastro_Load(object sender, EventArgs e)
         {
 
         }
-
-
     }
 }
