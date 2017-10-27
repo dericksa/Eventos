@@ -13,10 +13,10 @@ namespace Modelo.DAO
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class EventosDBEntities : DbContext
+    public partial class EventosEntities : DbContext
     {
-        public EventosDBEntities()
-            : base("name=EventosDBEntities")
+        public EventosEntities()
+            : base("name=EventosEntities")
         {
         }
     
@@ -25,11 +25,11 @@ namespace Modelo.DAO
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Aluno> Alunoes { get; set; }
+        public virtual DbSet<Aluno> Alunos { get; set; }
         public virtual DbSet<Horario> Horarios { get; set; }
         public virtual DbSet<Participante> Participantes { get; set; }
         public virtual DbSet<Pessoa> Pessoas { get; set; }
-        public virtual DbSet<Professor> Professors { get; set; }
-        public virtual DbSet<Reuniao> Reuniaos { get; set; }
+        public virtual DbSet<Professor> Professores { get; set; }
+        public virtual DbSet<Reuniao> Reunioes { get; set; }
     }
 }

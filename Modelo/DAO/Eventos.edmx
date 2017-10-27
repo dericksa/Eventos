@@ -300,7 +300,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="EventosDBEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="EventosEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Alunoes" EntityType="Self.Aluno" />
           <EntitySet Name="Horarios" EntityType="Self.Horario" />
           <EntitySet Name="Participantes" EntityType="Self.Participante" />
@@ -337,7 +337,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="EventosDBModelStoreContainer" CdmEntityContainer="EventosDBEntities">
+        <EntityContainerMapping StorageEntityContainer="EventosDBModelStoreContainer" CdmEntityContainer="EventosEntities">
           <EntitySetMapping Name="Alunoes">
             <EntityTypeMapping TypeName="EventosDBModel.Aluno">
               <MappingFragment StoreEntitySet="Aluno">

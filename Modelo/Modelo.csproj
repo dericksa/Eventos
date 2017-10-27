@@ -83,6 +83,9 @@
     <Compile Include="DAO\Reuniao.cs">
       <DependentUpon>Eventos.tt</DependentUpon>
     </Compile>
+    <Compile Include="PN\pnAluno.cs" />
+    <Compile Include="PN\pnPessoa.cs" />
+    <Compile Include="PN\pnProfessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -97,6 +100,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="DAO\Eventos.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Eventos.edmx</DependentUpon>
@@ -107,12 +113,6 @@
       <DependentUpon>Eventos.edmx</DependentUpon>
       <LastGenOutput>Eventos.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="PN\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
