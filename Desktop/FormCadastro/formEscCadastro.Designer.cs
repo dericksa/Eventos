@@ -1,4 +1,4 @@
-﻿namespace Desktop
+﻿namespace AlunoController
 {
     partial class formEscCadastro
     {

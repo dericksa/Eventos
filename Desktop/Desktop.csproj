@@ -52,6 +52,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AlunoController.cs" />
+    <Compile Include="Controllers\PessoaController.cs" />
     <Compile Include="FormCadastro\formCadastroAluno.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,7 +107,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\Modelo\Modelo.csproj">
+      <Project>{0374755B-155E-4E86-9835-A1EFB3D6A488}</Project>
+      <Name>Modelo</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

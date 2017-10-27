@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Modelo.PN
 {
-    class pnProfessor
+    public class pnProfessor
     {
 
 

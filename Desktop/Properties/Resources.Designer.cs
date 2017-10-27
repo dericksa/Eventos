@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Desktop.Properties
+namespace AlunoController.Properties
 {
 
 

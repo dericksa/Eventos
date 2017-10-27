@@ -1,4 +1,4 @@
-﻿namespace Desktop.FormCadastro
+﻿namespace AlunoController.FormCadastro
 {
     partial class formCadastroAluno
     {

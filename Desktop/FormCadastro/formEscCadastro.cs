@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Desktop
+namespace AlunoController
 {
     public partial class formEscCadastro : Form
     {

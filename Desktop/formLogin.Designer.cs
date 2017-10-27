@@ -1,4 +1,4 @@
-﻿namespace Desktop
+﻿namespace Login
 {
     partial class formLogin
     {
@@ -80,6 +80,7 @@
             this.btnConectar.TabIndex = 7;
             this.btnConectar.Text = "Conectar";
             this.btnConectar.UseVisualStyleBackColor = true;
+            this.btnConectar.Click += new System.EventHandler(this.btnConectar_Click);
             // 
             // btnCadastrar
             // 

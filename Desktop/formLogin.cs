@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Modelo.DAO;
+using Modelo.PN;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Desktop
+namespace Login
 {
     public partial class formLogin : Form
     {
@@ -22,6 +24,20 @@ namespace Desktop
 
         }
 
+        private void btnConectar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int identificacao = int.Parse(txtLogin.Text);
+                int senha = int.Parse(txtSenha.Text);
 
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            
+   
+        }
     }
 }
