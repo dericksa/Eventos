@@ -74,6 +74,7 @@
             this.btnEscolha.TabIndex = 3;
             this.btnEscolha.Text = "Escolher";
             this.btnEscolha.UseVisualStyleBackColor = true;
+            this.btnEscolha.Click += new System.EventHandler(this.btnEscolha_Click);
             // 
             // formEscCadastro
             // 

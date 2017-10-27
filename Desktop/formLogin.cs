@@ -1,5 +1,7 @@
 ﻿using Modelo.DAO;
 using Modelo.PN;
+using Desktop.Controllers;
+using Desktop;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AlunoController;
 
 namespace Login
 {
@@ -28,8 +31,14 @@ namespace Login
         {
             try
             {
-                int identificacao = int.Parse(txtLogin.Text);
-                int senha = int.Parse(txtSenha.Text);
+                Pessoa l_pessoa = new Pessoa();
+                l_pessoa.Identificacao = int.Parse(txtLogin.Text);
+                l_pessoa.Senha = txtSenha.Text;
+
+                if (Desktop.Controllers.AlunoController.Autenticacao(l_pessoa))
+                {
+                    Console.WriteLine("Logou\n");
+                }
 
             }
             catch (Exception)
@@ -38,6 +47,34 @@ namespace Login
             }
             
    
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            formEscCadastro form = new formEscCadastro();
+            this.Hide();
+            form.Show();
+
+        }
+
+        private void txtSenha_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtLogin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelSenha_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -113,6 +113,7 @@
             this.btnCadastrar.TabIndex = 8;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // labelWarn
             // 
@@ -143,6 +144,7 @@
             this.Controls.Add(this.labelNome);
             this.Name = "formCadastroAluno";
             this.Text = "formCadastroAluno";
+            this.Load += new System.EventHandler(this.formCadastroAluno_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

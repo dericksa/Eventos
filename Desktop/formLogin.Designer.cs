@@ -42,6 +42,7 @@
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(195, 20);
             this.txtLogin.TabIndex = 0;
+            this.txtLogin.TextChanged += new System.EventHandler(this.txtLogin_TextChanged);
             // 
             // labelID
             // 
@@ -52,6 +53,7 @@
             this.labelID.Size = new System.Drawing.Size(100, 20);
             this.labelID.TabIndex = 1;
             this.labelID.Text = "Identificação";
+            this.labelID.Click += new System.EventHandler(this.labelID_Click);
             // 
             // txtSenha
             // 
@@ -60,6 +62,7 @@
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(195, 20);
             this.txtSenha.TabIndex = 5;
+            this.txtSenha.TextChanged += new System.EventHandler(this.txtSenha_TextChanged);
             // 
             // labelSenha
             // 
@@ -70,6 +73,7 @@
             this.labelSenha.Size = new System.Drawing.Size(56, 20);
             this.labelSenha.TabIndex = 6;
             this.labelSenha.Text = "Senha";
+            this.labelSenha.Click += new System.EventHandler(this.labelSenha_Click);
             // 
             // btnConectar
             // 
@@ -91,6 +95,7 @@
             this.btnCadastrar.TabIndex = 8;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // formLogin
             // 
