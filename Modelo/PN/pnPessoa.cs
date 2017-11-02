@@ -16,7 +16,7 @@ namespace Modelo.PN
             {
                 EventosEntities db = new EventosEntities();
 
-                db.Pessoas.Add(p);
+                db.Pessoa.Add(p);
                 db.SaveChanges();
 
                 return true;
@@ -35,7 +35,7 @@ namespace Modelo.PN
 
                 Pessoa p1 = new Pessoa();
 
-                p1 = db.Pessoas.Find(id);
+                p1 = db.Pessoa.Find(id);
 
                 return p1;
             }

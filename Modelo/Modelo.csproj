@@ -51,38 +51,39 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="DAO\Aluno.cs">
-      <DependentUpon>Eventos.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAO\Eventos.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Eventos.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAO\Eventos.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Eventos.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAO\Eventos.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Eventos.edmx</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAO\Horario.cs">
-      <DependentUpon>Eventos.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="DAO\Participante.cs">
-      <DependentUpon>Eventos.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAO\Pessoa.cs">
-      <DependentUpon>Eventos.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAO\Professor.cs">
-      <DependentUpon>Eventos.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAO\Reuniao.cs">
-      <DependentUpon>Eventos.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="EN\CadastroPessoa.cs" />
     <Compile Include="PN\pnAluno.cs" />
     <Compile Include="PN\pnPessoa.cs" />
     <Compile Include="PN\pnProfessor.cs" />
@@ -90,12 +91,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="DAO\Eventos.edmx">
+    <EntityDeploy Include="DAO\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Eventos.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DAO\Eventos.edmx.diagram">
-      <DependentUpon>Eventos.edmx</DependentUpon>
+    <None Include="DAO\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
@@ -103,15 +104,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DAO\Eventos.Context.tt">
+    <Content Include="DAO\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Eventos.edmx</DependentUpon>
-      <LastGenOutput>Eventos.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DAO\Eventos.tt">
+    <Content Include="DAO\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Eventos.edmx</DependentUpon>
-      <LastGenOutput>Eventos.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

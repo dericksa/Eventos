@@ -17,7 +17,7 @@ namespace Modelo.PN
             {
                 EventosEntities db = new EventosEntities();
 
-                db.Professores.Add(p);
+                db.Professor.Add(p);
                 db.SaveChanges();
 
                 return true;
@@ -36,7 +36,7 @@ namespace Modelo.PN
 
                 Professor p1 = new Professor();
 
-                p1 = db.Professores.Find(id);
+                p1 = db.Professor.Find(id);
 
                 return p1;
             }

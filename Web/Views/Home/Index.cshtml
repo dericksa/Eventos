@@ -1,31 +1,72 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@{ 
+    Layout = null;
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+@Styles.Render("~/Content/index.css")
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+    <div class="index-background" align="center">
+        <br>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <h1 align="center" class="text">DESCUBRA EVENTOS E MARQUE REUNIÕES COM SEUS PROFESSORES</h1>
+        
+        <div align="center"><img src="~/Images/smile.png" width="60px" height="60px"></div>
+
+        <div class="container">
+
+@using (Html.BeginForm("", "", FormMethod.Post))
+{
+    <h2>Você é aluno ou professor?</h2>
+
+            <ul>
+                <li>
+                    
+                    <input type="radio" id="opc-aluno" name="selector" value="aluno" onclick='tipoPessoa()'>
+                    <label for="opc-aluno">Aluno</label>
+
+                    <div class="check"></div>   
+                </li>
+
+                <li>
+                    <input type="radio" id="opc-prof" name="selector" value="professor" onclick='tipoPessoa()'>
+                    <label for="opc-prof">Professor</label>
+
+                    <div class="check"><div class="inside"></div></div>
+                </li>
+            </ul>
+            
+}
+        </div>
+       
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+
+    function tipoPessoa() {
+        alert('tipo: ' + getRadioValor('selector'));
+    }
+
+    function getRadioValor(name) {
+        var rads = document.getElementsByName(name);
+
+        for (var i = 0; i < rads.length; i++) {
+            if (rads[i].checked) {
+                return rads[i].value;
+            }
+
+        }
+
+        return null;
+    }
+
+</script>

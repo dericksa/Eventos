@@ -9,13 +9,13 @@ namespace Modelo.PN
 {
    public class pnAluno
     {
-        public static bool Inserir(Aluno p)
+        public static bool Inserir(Aluno aluno)
         {
             try
             {
                 EventosEntities db = new EventosEntities();
 
-                db.Alunos.Add(p);
+                db.Aluno.Add(aluno);     
                 db.SaveChanges();
 
                 return true;
@@ -34,7 +34,7 @@ namespace Modelo.PN
 
                 Aluno a1 = new Aluno();
 
-                a1 = db.Alunos.Find(ra);
+                a1 = db.Aluno.Find(ra);
 
                 return a1;
             }

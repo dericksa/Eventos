@@ -26,5 +26,16 @@ namespace Web.Controllers
 
             return View();
         }
+
+        [HttpPost]
+        public ActionResult TipoPessoa(string tipoPessoa)
+        {
+            if (tipoPessoa == "opc-aluno")
+            {
+                return RedirectToAction("telaCadastroAluno", "Aluno");
+            }
+            return RedirectToAction("Contact","Home");
+            
+        }
     }
 }

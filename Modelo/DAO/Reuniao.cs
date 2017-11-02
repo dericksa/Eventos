@@ -17,7 +17,7 @@ namespace Modelo.DAO
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Reuniao()
         {
-            this.Participantes = new HashSet<Participante>();
+            this.Participante = new HashSet<Participante>();
         }
     
         public int Id { get; set; }
@@ -27,7 +27,7 @@ namespace Modelo.DAO
         public System.DateTime Data { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Participante> Participantes { get; set; }
+        public virtual ICollection<Participante> Participante { get; set; }
         public virtual Pessoa Pessoa { get; set; }
     }
 }
