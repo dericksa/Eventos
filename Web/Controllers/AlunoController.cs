@@ -66,30 +66,19 @@ namespace Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult cadastroAluno(Aluno cadastro)
+        public ActionResult cadastroAluno([Bind(Include ="Nome,RA,Curso,Senha")] Aluno cadastro)
         {
-            ViewBag.alunoNome = cadastro.Nome;  
-            ViewBag.alunoRA = cadastro.RA;
-            ViewBag.alunoSenha = cadastro.Senha;
-            ViewBag.alunoCurso = cadastro.Curso;
 
-            try
+            if (pnAluno.Inserir(cadastro))
             {
-                Aluno novo_aluno = new Aluno();
-
-                novo_aluno.Nome = cadastro.Nome;
-                novo_aluno.Curso = cadastro.Curso;
-                novo_aluno.RA = cadastro.RA;
-
-                pnAluno.Inserir(novo_aluno);
                 return RedirectToAction("Index", "Home");
             }
-            catch(Exception e)
-            {
-                ViewBag.mensagem = e;
-                Console.Write(e);
-                //return RedirectToAction("FalhaCadastro", "Aluno", e);
-                return View();
+
+
+            else
+            { 
+                return RedirectToAction("FalhaCadastro", "Aluno");
+            //return View();
             }
         }
     }    
