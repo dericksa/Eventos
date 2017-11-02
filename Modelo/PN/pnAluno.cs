@@ -22,7 +22,8 @@ namespace Modelo.PN
             }
             catch (Exception)
             {
-                throw;
+                //throw;
+                return false;
             }
         }
 
