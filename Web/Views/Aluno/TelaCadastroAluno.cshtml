@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "CadastroAluno";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 align="center">CadastroAluno</h2>
+
+
+@Styles.Render("~/Content/cadastro.css")
+
+
+<div class="login" align="center" margin-left="33%" margin-right="33%">
+    @using (Html.BeginForm("cadastroAluno", "Aluno"))
+    {
+        <input id="inputCadastro" class="inputCadastro" type="text" id="nome" style="margin: 10px" placeholder="Nome">
+        <br>
+        <input class="inputCadastro" type="text" id="ra" style="margin: 10px" placeholder="RA">
+        <br>
+        <input class="inputCadastro" type="text" id="curso" style="margin: 10px" placeholder="Curso">
+        <br>
+        <input class="inputCadastro" type="password" id="psw" style="margin: 10px" placeholder="Senha">
+        <br>
+        <input class="submitCadastro" type="submit" value="Cadastrar" onclick="oi();">
+
+    }
+</div>
+
+<script type="text/javascript">
+    function oi() {
+        alert($("#inputCadastro").val())
+
+    }
+</script>

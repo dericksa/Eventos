@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "LoginAluno";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Styles.Render("~/Content/login.css")
+
+<h2 align="center">LoginAluno</h2>
+
+<div class="login" align="center">
+    @using (Html.BeginForm("Autenticar","Aluno") )
+    {
+        <input class="inputLogin" type="text" id="ra" style="margin: 10px" placeholder="RA">
+        <br>
+        <input class="inputLogin" type="password" id="psw" style="margin: 10px" placeholder="Senha">
+        <br>
+        <input class="submitLogin" type="submit" value="Login  :)">
+
+    }
+</div>
