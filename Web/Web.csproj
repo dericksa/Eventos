@@ -190,6 +190,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AlunoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -204,6 +205,8 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\cadastro.css" />
+    <Content Include="Content\login.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -258,6 +261,15 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Aluno\Create.cshtml" />
+    <Content Include="Views\Aluno\Delete.cshtml" />
+    <Content Include="Views\Aluno\Details.cshtml" />
+    <Content Include="Views\Aluno\Edit.cshtml" />
+    <Content Include="Views\Aluno\Index.cshtml" />
+    <Content Include="Views\Aluno\LoginAluno.cshtml" />
+    <Content Include="Views\Aluno\TelaCadastroAluno.cshtml" />
+    <Content Include="Views\Aluno\CadastroAluno.cshtml" />
+    <Content Include="Views\Aluno\falhaCadastro.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -274,6 +286,12 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EventosDB\EventosDB.sqlproj">
+      <Project>{964d7258-331e-4839-a10a-4d8e80f82130}</Project>
+      <Name>EventosDB</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
