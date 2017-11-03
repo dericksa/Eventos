@@ -261,6 +261,10 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+<<<<<<< HEAD
+=======
+    <Content Include="Views\Aluno\CadastroAluno.cshtml" />
+>>>>>>> c514dcfa33a616d12fb3d366f168a7bcd2cc2c2c
     <Content Include="Views\Aluno\Create.cshtml" />
     <Content Include="Views\Aluno\Delete.cshtml" />
     <Content Include="Views\Aluno\Details.cshtml" />
@@ -268,8 +272,11 @@
     <Content Include="Views\Aluno\Index.cshtml" />
     <Content Include="Views\Aluno\LoginAluno.cshtml" />
     <Content Include="Views\Aluno\TelaCadastroAluno.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\Aluno\CadastroAluno.cshtml" />
     <Content Include="Views\Aluno\falhaCadastro.cshtml" />
+=======
+>>>>>>> c514dcfa33a616d12fb3d366f168a7bcd2cc2c2c
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
