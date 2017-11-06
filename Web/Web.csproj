@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F9105243-1B0B-4EEF-A80A-B1EA27DB225E}</ProjectGuid>
+    <ProjectGuid>{FADAECD7-D3B3-4EE2-80C3-FAE97F0DD37D}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -24,6 +24,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -46,12 +47,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -121,6 +116,12 @@
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
@@ -203,10 +204,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\cadastro.css" />
-    <Content Include="Content\login.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -261,10 +262,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-<<<<<<< HEAD
-=======
-    <Content Include="Views\Aluno\CadastroAluno.cshtml" />
->>>>>>> c514dcfa33a616d12fb3d366f168a7bcd2cc2c2c
     <Content Include="Views\Aluno\Create.cshtml" />
     <Content Include="Views\Aluno\Delete.cshtml" />
     <Content Include="Views\Aluno\Details.cshtml" />
@@ -272,11 +269,8 @@
     <Content Include="Views\Aluno\Index.cshtml" />
     <Content Include="Views\Aluno\LoginAluno.cshtml" />
     <Content Include="Views\Aluno\TelaCadastroAluno.cshtml" />
-<<<<<<< HEAD
     <Content Include="Views\Aluno\CadastroAluno.cshtml" />
     <Content Include="Views\Aluno\falhaCadastro.cshtml" />
-=======
->>>>>>> c514dcfa33a616d12fb3d366f168a7bcd2cc2c2c
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -295,9 +289,9 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EventosDB\EventosDB.sqlproj">
-      <Project>{964d7258-331e-4839-a10a-4d8e80f82130}</Project>
-      <Name>EventosDB</Name>
+    <ProjectReference Include="..\Modelo\Modelo.csproj">
+      <Project>{0374755B-155E-4E86-9835-A1EFB3D6A488}</Project>
+      <Name>Modelo</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
@@ -316,7 +310,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>57117</DevelopmentServerPort>
+          <DevelopmentServerPort>59391</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:57117/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

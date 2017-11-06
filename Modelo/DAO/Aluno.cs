@@ -15,8 +15,6 @@ namespace Modelo.DAO
     public partial class Aluno
     {
         public int RA { get; set; }
-        public string Senha { get; set; }
-        public string Nome { get; set; }
         public string Curso { get; set; }
     
         public virtual Pessoa Pessoa { get; set; }

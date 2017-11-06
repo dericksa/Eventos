@@ -10,8 +10,6 @@
             <PropertyRef Name="RA" />
           </Key>
           <Property Name="RA" Type="int" Nullable="false" />
-          <Property Name="Senha" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Nome" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Curso" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Horario">
@@ -170,8 +168,6 @@
             <PropertyRef Name="RA" />
           </Key>
           <Property Name="RA" Type="Int32" Nullable="false" />
-          <Property Name="Senha" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Curso" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Pessoa" Relationship="Self.RA" FromRole="Aluno" ToRole="Pessoa" />
         </EntityType>
@@ -229,8 +225,8 @@
           <NavigationProperty Name="Pessoa" Relationship="Self.Criador" FromRole="Reuniao" ToRole="Pessoa" />
         </EntityType>
         <Association Name="RA">
-          <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="1" />
-          <End Role="Aluno" Type="Self.Aluno" Multiplicity="0..1" />
+          <End Role="Pessoa" Type="EventosDBModel.Pessoa" Multiplicity="1" />
+          <End Role="Aluno" Type="EventosDBModel.Aluno" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="Pessoa">
               <PropertyRef Name="Identificacao" />
@@ -241,8 +237,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Identificacao">
-          <End Role="Professor" Type="Self.Professor" Multiplicity="1" />
-          <End Role="Horario" Type="Self.Horario" Multiplicity="0..1" />
+          <End Role="Professor" Type="EventosDBModel.Professor" Multiplicity="1" />
+          <End Role="Horario" Type="EventosDBModel.Horario" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="Professor">
               <PropertyRef Name="Id" />
@@ -253,8 +249,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Id_pessoa">
-          <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="1" />
-          <End Role="Participante" Type="Self.Participante" Multiplicity="*" />
+          <End Role="Pessoa" Type="EventosDBModel.Pessoa" Multiplicity="1" />
+          <End Role="Participante" Type="EventosDBModel.Participante" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Pessoa">
               <PropertyRef Name="Identificacao" />
@@ -266,7 +262,7 @@
         </Association>
         <Association Name="Id_reuniao">
           <End Role="Reuniao" Type="Self.Reuniao" Multiplicity="1" />
-          <End Role="Participante" Type="Self.Participante" Multiplicity="*" />
+          <End Role="Participante" Type="EventosDBModel.Participante" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Reuniao">
               <PropertyRef Name="Id" />
@@ -277,7 +273,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Criador">
-          <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="1" />
+          <End Role="Pessoa" Type="EventosDBModel.Pessoa" Multiplicity="1" />
           <End Role="Reuniao" Type="Self.Reuniao" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Pessoa">
@@ -289,8 +285,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Id">
-          <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="1" />
-          <End Role="Professor" Type="Self.Professor" Multiplicity="0..1" />
+          <End Role="Pessoa" Type="EventosDBModel.Pessoa" Multiplicity="1" />
+          <End Role="Professor" Type="EventosDBModel.Professor" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="Pessoa">
               <PropertyRef Name="Identificacao" />
@@ -301,11 +297,11 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="EventosEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Alunoes" EntityType="Self.Aluno" />
-          <EntitySet Name="Horarios" EntityType="Self.Horario" />
-          <EntitySet Name="Participantes" EntityType="Self.Participante" />
-          <EntitySet Name="Pessoas" EntityType="Self.Pessoa" />
-          <EntitySet Name="Professors" EntityType="Self.Professor" />
+          <EntitySet Name="Alunoes" EntityType="EventosDBModel.Aluno" />
+          <EntitySet Name="Horarios" EntityType="EventosDBModel.Horario" />
+          <EntitySet Name="Participantes" EntityType="EventosDBModel.Participante" />
+          <EntitySet Name="Pessoas" EntityType="EventosDBModel.Pessoa" />
+          <EntitySet Name="Professors" EntityType="EventosDBModel.Professor" />
           <EntitySet Name="Reuniaos" EntityType="Self.Reuniao" />
           <AssociationSet Name="RA" Association="Self.RA">
             <End Role="Pessoa" EntitySet="Pessoas" />
@@ -342,8 +338,6 @@
             <EntityTypeMapping TypeName="EventosDBModel.Aluno">
               <MappingFragment StoreEntitySet="Aluno">
                 <ScalarProperty Name="RA" ColumnName="RA" />
-                <ScalarProperty Name="Senha" ColumnName="Senha" />
-                <ScalarProperty Name="Nome" ColumnName="Nome" />
                 <ScalarProperty Name="Curso" ColumnName="Curso" />
               </MappingFragment>
             </EntityTypeMapping>

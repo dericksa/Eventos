@@ -43,7 +43,6 @@ namespace Desktop.Controllers
             {
                 Aluno novo_aluno = new Aluno();
 
-                novo_aluno.Nome = cadastro.Nome;
                 novo_aluno.Curso = cadastro.Curso;
                 novo_aluno.RA = cadastro.RA;
 

@@ -1,4 +1,5 @@
 ﻿using Modelo.DAO;
+using Modelo.PN;
 using System;
 using System.Collections.Generic;
 using System.Linq;
