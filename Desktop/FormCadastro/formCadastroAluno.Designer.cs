@@ -1,4 +1,4 @@
-﻿namespace AlunoController.FormCadastro
+﻿namespace FormCadastro
 {
     partial class formCadastroAluno
     {
@@ -126,6 +126,7 @@
             this.labelWarn.TabIndex = 9;
             this.labelWarn.Text = "label4";
             this.labelWarn.Visible = false;
+            this.labelWarn.Click += new System.EventHandler(this.labelWarn_Click);
             // 
             // formCadastroAluno
             // 

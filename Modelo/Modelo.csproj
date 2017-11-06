@@ -84,6 +84,7 @@
       <DependentUpon>Eventos.tt</DependentUpon>
     </Compile>
     <Compile Include="PN\pnAluno.cs" />
+    <Compile Include="PN\pnCadastro.cs" />
     <Compile Include="PN\pnPessoa.cs" />
     <Compile Include="PN\pnProfessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

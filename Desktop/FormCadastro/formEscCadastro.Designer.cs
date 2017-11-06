@@ -1,4 +1,6 @@
-﻿namespace AlunoController
+﻿using System.Drawing;
+
+namespace FormCadastro
 {
     partial class formEscCadastro
     {
@@ -65,6 +67,7 @@
             this.label1.Size = new System.Drawing.Size(59, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Você é";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnEscolha
             // 
@@ -99,5 +102,7 @@
         private System.Windows.Forms.CheckBox checkProfessor;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnEscolha;
+
+        public SizeF AutoScaleDimensions { get; private set; }
     }
 }
