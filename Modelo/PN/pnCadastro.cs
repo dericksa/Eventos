@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Modelo.PN
 {
-    class pnCadastro
+    public class pnCadastro
     {
         public static bool Inserir(Pessoa p)
         {

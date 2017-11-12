@@ -101,13 +101,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(511, 261);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(523, 261);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.btnConectar);
             this.Controls.Add(this.labelSenha);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.labelID);
             this.Controls.Add(this.txtLogin);
+            this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Name = "formLogin";
             this.Text = "formLogin";
             this.Load += new System.EventHandler(this.formLogin_Load);
