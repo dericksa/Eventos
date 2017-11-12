@@ -1,4 +1,4 @@
-﻿@model Modelo.DAO.Aluno
+﻿@model Modelo.DAO.Pessoa
 @{
     ViewBag.Title = "CadastroAluno";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -12,7 +12,7 @@
 
 
 
-    @using (Html.BeginForm("cadastroAluno", "Aluno", FormMethod.Post))
+    @using (Html.BeginForm("cadastroAluno", "Pessoa", FormMethod.Post))
     {
         <div class="login" align="center" margin-left="33%" margin-right="33%">
             <div>
@@ -20,7 +20,7 @@
                 @Html.TextBoxFor(model => model.Nome, htmlAttributes: new { @class = "inputCadastro", @placeholder = "Nome", @style = "margin: 10px" })
             </div>
             <div>
-                @Html.TextBoxFor(model => model.RA, htmlAttributes: new { @class = "inputCadastro", @placeholder = "RA", @style = "margin: 10px" })
+                @Html.TextBoxFor(model => model.Identificacao, htmlAttributes: new { @class = "inputCadastro", @placeholder = "Identificacao", @style = "margin: 10px" })
             </div>
             <div>
                 @Html.TextBoxFor(model => model.Curso, htmlAttributes: new { @class = "inputCadastro", @placeholder = "Curso", @style = "margin: 10px" })

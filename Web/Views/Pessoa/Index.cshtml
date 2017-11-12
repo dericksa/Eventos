@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Modelo.DAO.Aluno>
+﻿@model IEnumerable<Modelo.DAO.Pessoa>
 
 @{
     ViewBag.Title = "Login Aluno";
@@ -21,7 +21,7 @@
             @Html.DisplayNameFor(model => model.Curso)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Pessoa.Nome)
+            @Html.DisplayNameFor(model => model.Nome)
         </th>
         <th></th>
     </tr>
@@ -38,12 +38,12 @@
             @Html.DisplayFor(modelItem => item.Curso)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Pessoa.Nome)
+            @Html.DisplayFor(modelItem => item.Nome)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.RA }) |
-            @Html.ActionLink("Details", "Details", new { id=item.RA }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.RA })
+            @Html.ActionLink("Edit", "Edit", new { id=item.Identificacao }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Identificacao }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Identificacao })
         </td>
     </tr>
 }

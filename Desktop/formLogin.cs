@@ -35,7 +35,7 @@ namespace Login
                 l_pessoa.Identificacao = int.Parse(txtLogin.Text);
                 l_pessoa.Senha = txtSenha.Text;
 
-                if (Desktop.Controllers.AlunoController.Autenticacao(l_pessoa))
+                if (PessoaController.Autenticacao(l_pessoa))
                 {
                     Console.WriteLine("Logou\n");
                 }
@@ -51,9 +51,9 @@ namespace Login
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            formEscCadastro form = new formEscCadastro();
+            /*formEscCadastro form = new formEscCadastro();
             this.Hide();
-            form.Show();
+            form.Show();*/
 
         }
 

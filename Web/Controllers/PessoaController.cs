@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
 using System.Linq;
-using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Modelo.DAO;
@@ -11,18 +8,18 @@ using Modelo.PN;
 
 namespace Web.Controllers
 {
-    public class AlunoController : Controller
+    public class PessoaController : Controller
     {
         private EventosEntities db = new EventosEntities();
 
-        // GET: Aluno
+        // GET: Pessoa
         [HttpPost]
         public ActionResult Autenticar(Pessoa login)
         {
             try
             {
 
-                if (pnAluno.Pesquisar(login.Identificacao) != null)
+                if (pnPessoa.Pesquisar(login.Identificacao) != null)
                 {
                     Pessoa aluno = new Pessoa();
 
@@ -38,13 +35,13 @@ namespace Web.Controllers
             }
             catch (Exception)
             {
-                return RedirectToAction("Contact","Home");
+                return RedirectToAction("Contact", "Home");
                 throw;
             }
 
             return View();
         }
-        
+
         public ActionResult loginAluno()
         {
             return View();
@@ -66,20 +63,20 @@ namespace Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult cadastroAluno([Bind(Include ="Nome,RA,Curso,Senha")] Aluno cadastro)
+        public ActionResult cadastroAluno([Bind(Include = "Nome,Identificacao,Curso,Senha")] Pessoa cadastro)
         {
 
-            if (pnAluno.Inserir(cadastro))
+            if (pnCadastro.Inserir(cadastro))
             {
                 return RedirectToAction("Index", "Home");
             }
 
 
             else
-            { 
+            {
                 return RedirectToAction("FalhaCadastro", "Aluno");
-            //return View();
+                //return View();
             }
         }
-    }    
+    }
 }

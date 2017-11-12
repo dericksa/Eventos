@@ -191,9 +191,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AlunoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PessoaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -262,15 +262,14 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Aluno\Create.cshtml" />
-    <Content Include="Views\Aluno\Delete.cshtml" />
-    <Content Include="Views\Aluno\Details.cshtml" />
-    <Content Include="Views\Aluno\Edit.cshtml" />
-    <Content Include="Views\Aluno\Index.cshtml" />
-    <Content Include="Views\Aluno\LoginAluno.cshtml" />
-    <Content Include="Views\Aluno\TelaCadastroAluno.cshtml" />
-    <Content Include="Views\Aluno\CadastroAluno.cshtml" />
-    <Content Include="Views\Aluno\falhaCadastro.cshtml" />
+    <Content Include="Views\Pessoa\Create.cshtml" />
+    <Content Include="Views\Pessoa\Delete.cshtml" />
+    <Content Include="Views\Pessoa\Details.cshtml" />
+    <Content Include="Views\Pessoa\Edit.cshtml" />
+    <Content Include="Views\Pessoa\Index.cshtml" />
+    <Content Include="Views\Pessoa\LoginAluno.cshtml" />
+    <Content Include="Views\Pessoa\TelaCadastroAluno.cshtml" />
+    <Content Include="Views\Pessoa\CadastroAluno.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
