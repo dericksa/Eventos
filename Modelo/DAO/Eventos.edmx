@@ -170,7 +170,7 @@
           <Property Name="Senha" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Grupo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Curso" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Departamento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Departamento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="true" />
           <NavigationProperty Name="Horario" Relationship="Self.Identificacao" FromRole="Pessoa" ToRole="Horario" />
           <NavigationProperty Name="Participante" Relationship="Self.Id_pessoa" FromRole="Pessoa" ToRole="Participante" />
           <NavigationProperty Name="Reuniao" Relationship="Self.Criador" FromRole="Pessoa" ToRole="Reuniao" />

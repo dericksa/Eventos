@@ -3,6 +3,7 @@ using Modelo.PN;
 using Desktop.Controllers;
 using Desktop;
 using System;
+using System.Diagnostics;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,15 +12,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using AlunoController;
+using MaterialSkin.Controls;
+using MaterialSkin.Animations;
+using MaterialSkin;
+using Desktop.fCadastro;
 
 namespace Login
 {
-    public partial class formLogin : Form
+    public partial class Login : MaterialForm
     {
-        public formLogin()
+        public Login()
         {
             InitializeComponent();
+           /* MaterialSkin.MaterialSkinManager skinManager = MaterialSkin.MaterialSkinManager.Instance;
+            skinManager.AddFormToManage(this);
+            skinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
+            skinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Blue600, MaterialSkin.Primary.Blue900, MaterialSkin.Primary.Yellow500, MaterialSkin.Accent.Orange700, MaterialSkin.TextShade.WHITE);
+            //skinManager.ColorScheme = new MaterialSkin.ColorScheme(Segunda Barra, Barra Superior, Não sei, Tick da box, Texto);*/
         }
 
         private void formLogin_Load(object sender, EventArgs e)
@@ -27,35 +36,7 @@ namespace Login
 
         }
 
-        private void btnConectar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Pessoa l_pessoa = new Pessoa();
-                l_pessoa.Identificacao = int.Parse(txtLogin.Text);
-                l_pessoa.Senha = txtSenha.Text;
 
-                if (PessoaController.Autenticacao(l_pessoa))
-                {
-                    Console.WriteLine("Logou\n");
-                }
-
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            
-   
-        }
-
-        private void btnCadastrar_Click(object sender, EventArgs e)
-        {
-            /*formEscCadastro form = new formEscCadastro();
-            this.Hide();
-            form.Show();*/
-
-        }
 
         private void txtSenha_TextChanged(object sender, EventArgs e)
         {
@@ -67,14 +48,38 @@ namespace Login
 
         }
 
-        private void labelID_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void labelSenha_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Cadastro cadastroForm = new Cadastro();
+            this.Hide();
+            cadastroForm.Show();
+            
+        }
+
+        private void btnConectar_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                Pessoa l_pessoa = new Pessoa();
+                l_pessoa.Identificacao = int.Parse(txt_Login.Text);
+                l_pessoa.Senha = txt_Senha.Text;
+
+                if (PessoaController.Autenticacao(l_pessoa))
+                {
+                    Debug.WriteLine("Logou\n");
+                }
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Login
 {
-    partial class formLogin
+    partial class Login
     {
         /// <summary>
         /// Required designer variable.
@@ -28,90 +28,87 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtLogin = new System.Windows.Forms.TextBox();
-            this.labelID = new System.Windows.Forms.Label();
-            this.txtSenha = new System.Windows.Forms.TextBox();
-            this.labelSenha = new System.Windows.Forms.Label();
-            this.btnConectar = new System.Windows.Forms.Button();
-            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.txt_Login = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txt_Senha = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.btnConectar = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnCadastro = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
-            // txtLogin
+            // txt_Login
             // 
-            this.txtLogin.Location = new System.Drawing.Point(143, 129);
-            this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(195, 20);
-            this.txtLogin.TabIndex = 0;
-            this.txtLogin.TextChanged += new System.EventHandler(this.txtLogin_TextChanged);
+            this.txt_Login.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_Login.Depth = 0;
+            this.txt_Login.Hint = "Identificacao";
+            this.txt_Login.Location = new System.Drawing.Point(12, 107);
+            this.txt_Login.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txt_Login.Name = "txt_Login";
+            this.txt_Login.PasswordChar = '\0';
+            this.txt_Login.SelectedText = "";
+            this.txt_Login.SelectionLength = 0;
+            this.txt_Login.SelectionStart = 0;
+            this.txt_Login.Size = new System.Drawing.Size(271, 23);
+            this.txt_Login.TabIndex = 0;
+            this.txt_Login.UseSystemPasswordChar = false;
             // 
-            // labelID
+            // txt_Senha
             // 
-            this.labelID.AutoSize = true;
-            this.labelID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelID.Location = new System.Drawing.Point(37, 127);
-            this.labelID.Name = "labelID";
-            this.labelID.Size = new System.Drawing.Size(100, 20);
-            this.labelID.TabIndex = 1;
-            this.labelID.Text = "Identificação";
-            this.labelID.Click += new System.EventHandler(this.labelID_Click);
-            // 
-            // txtSenha
-            // 
-            this.txtSenha.Location = new System.Drawing.Point(143, 155);
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.PasswordChar = '*';
-            this.txtSenha.Size = new System.Drawing.Size(195, 20);
-            this.txtSenha.TabIndex = 5;
-            this.txtSenha.TextChanged += new System.EventHandler(this.txtSenha_TextChanged);
-            // 
-            // labelSenha
-            // 
-            this.labelSenha.AutoSize = true;
-            this.labelSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSenha.Location = new System.Drawing.Point(54, 155);
-            this.labelSenha.Name = "labelSenha";
-            this.labelSenha.Size = new System.Drawing.Size(56, 20);
-            this.labelSenha.TabIndex = 6;
-            this.labelSenha.Text = "Senha";
-            this.labelSenha.Click += new System.EventHandler(this.labelSenha_Click);
+            this.txt_Senha.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_Senha.Depth = 0;
+            this.txt_Senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Senha.Hint = "Senha";
+            this.txt_Senha.Location = new System.Drawing.Point(12, 145);
+            this.txt_Senha.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txt_Senha.Name = "txt_Senha";
+            this.txt_Senha.PasswordChar = '*';
+            this.txt_Senha.SelectedText = "";
+            this.txt_Senha.SelectionLength = 0;
+            this.txt_Senha.SelectionStart = 0;
+            this.txt_Senha.Size = new System.Drawing.Size(271, 23);
+            this.txt_Senha.TabIndex = 1;
+            this.txt_Senha.TabStop = false;
+            this.txt_Senha.UseSystemPasswordChar = false;
             // 
             // btnConectar
             // 
-            this.btnConectar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConectar.Location = new System.Drawing.Point(366, 192);
+            this.btnConectar.Depth = 0;
+            this.btnConectar.Location = new System.Drawing.Point(12, 207);
+            this.btnConectar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnConectar.Name = "btnConectar";
-            this.btnConectar.Size = new System.Drawing.Size(116, 48);
-            this.btnConectar.TabIndex = 7;
-            this.btnConectar.Text = "Conectar";
+            this.btnConectar.Primary = true;
+            this.btnConectar.Size = new System.Drawing.Size(271, 32);
+            this.btnConectar.TabIndex = 2;
+            this.btnConectar.Text = "Login";
             this.btnConectar.UseVisualStyleBackColor = true;
-            this.btnConectar.Click += new System.EventHandler(this.btnConectar_Click);
+            this.btnConectar.Click += new System.EventHandler(this.btnConectar_Click_1);
             // 
-            // btnCadastrar
+            // btnCadastro
             // 
-            this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrar.Location = new System.Drawing.Point(41, 192);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(116, 48);
-            this.btnCadastrar.TabIndex = 8;
-            this.btnCadastrar.Text = "Cadastrar";
-            this.btnCadastrar.UseVisualStyleBackColor = true;
-            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
+            this.btnCadastro.AutoSize = true;
+            this.btnCadastro.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnCadastro.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastro.LinkColor = System.Drawing.Color.Gray;
+            this.btnCadastro.Location = new System.Drawing.Point(9, 254);
+            this.btnCadastro.Name = "btnCadastro";
+            this.btnCadastro.Size = new System.Drawing.Size(160, 14);
+            this.btnCadastro.TabIndex = 3;
+            this.btnCadastro.TabStop = true;
+            this.btnCadastro.Text = "Não tem conta? Cadastre-se";
+            this.btnCadastro.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // formLogin
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(523, 261);
-            this.Controls.Add(this.btnCadastrar);
+            this.ClientSize = new System.Drawing.Size(295, 294);
+            this.Controls.Add(this.btnCadastro);
             this.Controls.Add(this.btnConectar);
-            this.Controls.Add(this.labelSenha);
-            this.Controls.Add(this.txtSenha);
-            this.Controls.Add(this.labelID);
-            this.Controls.Add(this.txtLogin);
+            this.Controls.Add(this.txt_Senha);
+            this.Controls.Add(this.txt_Login);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.Name = "formLogin";
-            this.Text = "formLogin";
+            this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Login";
             this.Load += new System.EventHandler(this.formLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -120,11 +117,9 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtLogin;
-        private System.Windows.Forms.Label labelID;
-        private System.Windows.Forms.TextBox txtSenha;
-        private System.Windows.Forms.Label labelSenha;
-        private System.Windows.Forms.Button btnConectar;
-        private System.Windows.Forms.Button btnCadastrar;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txt_Login;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txt_Senha;
+        private MaterialSkin.Controls.MaterialRaisedButton btnConectar;
+        private System.Windows.Forms.LinkLabel btnCadastro;
     }
 }
