@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Reuniao]
 (
-	[Id] INT NOT NULL PRIMARY KEY, 
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY(1, 1), 
     [Criador] INT NOT NULL, 
     [Cancelado] BIT NOT NULL, 
     [Local] VARCHAR(50) NOT NULL, 

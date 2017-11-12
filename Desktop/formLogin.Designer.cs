@@ -32,6 +32,7 @@
             this.txt_Senha = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.btnConectar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnCadastro = new System.Windows.Forms.LinkLabel();
+            this.err_Code = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txt_Login
@@ -49,6 +50,7 @@
             this.txt_Login.Size = new System.Drawing.Size(271, 23);
             this.txt_Login.TabIndex = 0;
             this.txt_Login.UseSystemPasswordChar = false;
+            this.txt_Login.Click += new System.EventHandler(this.txt_Login_Click);
             // 
             // txt_Senha
             // 
@@ -95,12 +97,26 @@
             this.btnCadastro.Text = "Não tem conta? Cadastre-se";
             this.btnCadastro.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // err_Code
+            // 
+            this.err_Code.AutoSize = true;
+            this.err_Code.BackColor = System.Drawing.SystemColors.Window;
+            this.err_Code.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.err_Code.ForeColor = System.Drawing.Color.Red;
+            this.err_Code.Location = new System.Drawing.Point(12, 89);
+            this.err_Code.Name = "err_Code";
+            this.err_Code.Size = new System.Drawing.Size(58, 15);
+            this.err_Code.TabIndex = 4;
+            this.err_Code.Text = "err_Code";
+            this.err_Code.Visible = false;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(295, 294);
+            this.Controls.Add(this.err_Code);
             this.Controls.Add(this.btnCadastro);
             this.Controls.Add(this.btnConectar);
             this.Controls.Add(this.txt_Senha);
@@ -121,5 +137,6 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField txt_Senha;
         private MaterialSkin.Controls.MaterialRaisedButton btnConectar;
         private System.Windows.Forms.LinkLabel btnCadastro;
+        private System.Windows.Forms.Label err_Code;
     }
 }

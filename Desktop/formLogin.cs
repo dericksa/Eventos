@@ -16,6 +16,7 @@ using MaterialSkin.Controls;
 using MaterialSkin.Animations;
 using MaterialSkin;
 using Desktop.fCadastro;
+using Desktop.fPrograma;
 
 namespace Login
 {
@@ -72,7 +73,15 @@ namespace Login
 
                 if (PessoaController.Autenticacao(l_pessoa))
                 {
-                    Debug.WriteLine("Logou\n");
+                    TelaInicial telainicial = new TelaInicial();
+                    this.Hide();
+                    telainicial.Show();
+                }
+                else
+                {
+                    err_Code.Visible = true;
+                    this.Update();
+                    err_Code.Text = "Login ou senha Inválidos";
                 }
 
             }
@@ -80,6 +89,11 @@ namespace Login
             {
                 throw;
             }
+        }
+
+        private void txt_Login_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
