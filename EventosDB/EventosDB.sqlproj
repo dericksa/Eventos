@@ -60,8 +60,6 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="Pessoa.sql" />
-    <Build Include="Aluno.sql" />
-    <Build Include="Professor.sql" />
     <Build Include="Horario.sql" />
     <Build Include="Reuniao.sql" />
     <Build Include="Participante.sql" />

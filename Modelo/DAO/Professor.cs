@@ -18,7 +18,6 @@ namespace Modelo.DAO
         public string Nome { get; set; }
         public string Departamento { get; set; }
     
-        public virtual Horario Horario { get; set; }
         public virtual Pessoa Pessoa { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Modelo.DAO;
+using Modelo.PN;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,22 +8,18 @@ using System.Threading.Tasks;
 
 namespace Modelo.PN
 {
-   public class pnPessoa
+    class pnCadastro
     {
-        
-
-
-        public static Pessoa Pesquisar(int id)
+        public static bool Inserir(Pessoa p)
         {
             try
             {
                 EventosEntities db = new EventosEntities();
 
-                Pessoa p1 = new Pessoa();
+                db.Pessoa.Add(p);
+                db.SaveChanges();
 
-                p1 = db.Pessoa.Find(id);
-
-                return p1;
+                return true;
             }
             catch (Exception)
             {

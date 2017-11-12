@@ -25,11 +25,10 @@ namespace Modelo.DAO
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Aluno> Alunos { get; set; }
-        public virtual DbSet<Horario> Horarios { get; set; }
-        public virtual DbSet<Participante> Participantes { get; set; }
-        public virtual DbSet<Pessoa> Pessoas { get; set; }
-        public virtual DbSet<Professor> Professores { get; set; }
-        public virtual DbSet<Reuniao> Reunioes { get; set; }
+        public virtual DbSet<Horario> Horario { get; set; }
+        public virtual DbSet<Participante> Participante { get; set; }
+        public virtual DbSet<Pessoa> Pessoa { get; set; }
+        public virtual DbSet<Professor> Professor { get; set; }
+        public virtual DbSet<Reuniao> Reuniao { get; set; }
     }
 }

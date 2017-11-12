@@ -60,18 +60,6 @@
   <ItemGroup>
     <Compile Include="Controllers\AlunoController.cs" />
     <Compile Include="Controllers\PessoaController.cs" />
-    <Compile Include="FormCadastro\formCadastroAluno.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormCadastro\formCadastroAluno.Designer.cs">
-      <DependentUpon>formCadastroAluno.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormCadastro\formEscCadastro.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormCadastro\formEscCadastro.Designer.cs">
-      <DependentUpon>formEscCadastro.cs</DependentUpon>
-    </Compile>
     <Compile Include="formLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,12 +68,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormCadastro\formCadastroAluno.resx">
-      <DependentUpon>formCadastroAluno.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormCadastro\formEscCadastro.resx">
-      <DependentUpon>formEscCadastro.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="formLogin.resx">
       <DependentUpon>formLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,6 +100,7 @@
       <Name>Modelo</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

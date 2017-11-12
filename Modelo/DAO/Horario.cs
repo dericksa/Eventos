@@ -17,6 +17,6 @@ namespace Modelo.DAO
         public int Identificacao { get; set; }
         public System.DateTime Horario1 { get; set; }
     
-        public virtual Professor Professor { get; set; }
+        public virtual Pessoa Pessoa { get; set; }
     }
 }

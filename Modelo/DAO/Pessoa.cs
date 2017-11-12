@@ -17,19 +17,22 @@ namespace Modelo.DAO
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Pessoa()
         {
-            this.Participantes = new HashSet<Participante>();
-            this.Reuniaos = new HashSet<Reuniao>();
+            this.Participante = new HashSet<Participante>();
+            this.Reuniao = new HashSet<Reuniao>();
         }
     
         public int Identificacao { get; set; }
         public string Nome { get; set; }
         public string Senha { get; set; }
+        public string Grupo { get; set; }
+        public string Curso { get; set; }
+        public string Departamento { get; set; }
     
-        public virtual Aluno Aluno { get; set; }
+        public virtual Horario Horario { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Participante> Participantes { get; set; }
+        public virtual ICollection<Participante> Participante { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Reuniao> Reuniaos { get; set; }
+        public virtual ICollection<Reuniao> Reuniao { get; set; }
         public virtual Professor Professor { get; set; }
     }
 }
