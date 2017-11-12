@@ -23,6 +23,8 @@ namespace Desktop.fPrograma
 
         private void TelaInicial_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'eventosDBDataSet.Reuniao'. Você pode movê-la ou removê-la conforme necessário.
+            this.reuniaoTableAdapter.Fill(this.eventosDBDataSet.Reuniao);
 
         }
 
@@ -37,6 +39,11 @@ namespace Desktop.fPrograma
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
