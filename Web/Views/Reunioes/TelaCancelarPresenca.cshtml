@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "TelaCancelarReuniao";
+}
+@Styles.Render("~/Content/reunioes.css")
+<h2 align="center" style="margin: 30px">Cancelar Presença</h2>
+
+@using (Html.BeginForm())
+{
+    <div align="center" margin-left="33%" margin-right="33%">
+        <div class="visedit">
+            <div class="visedit-header">
+                <button class="enviar">Enviar</button>
+                <h2 class="descricao-motivo">Descreva o motivo do cancelamento</h2>
+            </div>
+            <textarea id="txt1" class="visedit-area">
+            </textarea>
+        </div>
+    </div>
+}

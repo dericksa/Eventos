@@ -10,31 +10,27 @@
 @Styles.Render("~/Content/cadastro.css")
 
 
-
-
     @using (Html.BeginForm("cadastroAluno", "Pessoa", FormMethod.Post))
     {
-        <div class="login" align="center" margin-left="33%" margin-right="33%">
+        <div align="center" margin-left="33%" margin-right="33%">
             <div>
-                <!--<input class="inputCadastro" type="text" id="Nome" style="margin: 10px" placeholder="Nome">-->
                 @Html.TextBoxFor(model => model.Nome, htmlAttributes: new { @class = "inputCadastro", @placeholder = "Nome", @style = "margin: 10px" })
             </div>
             <div>
-                @Html.TextBoxFor(model => model.Identificacao, htmlAttributes: new { @class = "inputCadastro", @placeholder = "Identificacao", @style = "margin: 10px" })
+                @Html.TextBoxFor(model => model.Identificacao, htmlAttributes: new { @type="number", @class = "inputCadastro", @placeholder = "Identificacao", @style = "margin: 10px" })
             </div>
             <div>
                 @Html.TextBoxFor(model => model.Curso, htmlAttributes: new { @class = "inputCadastro", @placeholder = "Curso", @style = "margin: 10px" })
             </div>
             <div>
+                @Html.TextBoxFor(model => model.Departamento, htmlAttributes: new { @class = "inputCadastro", @placeholder = "Departamento", @style = "margin: 10px" })
+            </div>
+            <div>
+                @Html.TextBoxFor(model => model.Grupo, htmlAttributes: new { @class = "inputCadastro", @placeholder = "Grupo", @style = "margin: 10px" })
+            </div>
+            <div>
                 @Html.PasswordFor(model => model.Senha, htmlAttributes: new { @class = "inputCadastro", @placeholder = "Senha", @style = "margin: 10px" })
             </div>
-            <!--  <br>
-              <input class="inputCadastro" type="number" id="ra" style="margin: 10px" placeholder="RA">
-              <br>
-              <input class="inputCadastro" type="text" id="curso" style="margin: 10px" placeholder="Curso">
-              <br>
-              <input class="inputCadastro" type="password" id="psw" style="margin: 10px" placeholder="Senha">
-              <br>-->
             <div>
                 <input class="submitCadastro" type="submit" value="Cadastrar">
             </div>
@@ -42,14 +38,3 @@
         </div>
     }
        
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")    
-}
-
-<script type="text/javascript">
-    function oi() {
-        alert($("#inputCadastro").val())
-
-    }
-</script>

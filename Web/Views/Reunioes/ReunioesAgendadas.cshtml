@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewBag.Title = "ReunioesAgendadas";
+}
+
+@Styles.Render("~/Content/reunioes.css")
+
+<h2 style="margin-top: 50px; margin-bottom:20px">Reuniões agendadas que...</h2>
+<br>
+<p style="font:24px arial, verdana; color: darkgray">...você é o administrador:</p>
+<div class="administrador">
+    <table>
+        <tr>
+            <td width="20%">
+                <p style="font:18px arial, verdana; margin: 0">Reunião com: </p>
+            </td>
+            <td width="80%" align="right" style="color:red">
+                <span data-tooltip="Cancelar Reunião">
+                    <a href="@Url.Action("TelaCancelarPresenca", "Reunioes")" style="text-align: right; font: 100 16px arial, verdana; color: white; text-decoration:none;">
+                        <img src="~/Imagens/cancelar.png" width="40px" height="40px">
+                    </a>
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td width="100%">
+                <p style="margin-left: 20px;">Nome das pessoas</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p style="color: darkgray; font-size:15px;">Data</p>
+                <p style="color: darkgray; font-size:15px;">Local</p>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<p style="font:24px arial, verdana; color: darkgray">...você confirmou presença:</p>
+<div class="confirmado">
+    <table>
+        <tr>
+            <td width="20%">
+                <p style="font:18px arial, verdana; margin: 0">Reunião com: </p>
+            </td>
+            <td width="80%" align="right" style="color:red">
+                <span data-tooltip="Cancelar Presença">
+                    <a href="@Url.Action("TelaCancelarPresenca", "Reunioes")" style="text-align: right; font: 100 16px arial, verdana; color: white; text-decoration:none;">
+                        <img src="~/Imagens/cancelar.png" width="40px" height="40px">
+                    </a>
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td width="100%">
+                <p style="margin-left: 20px;">Nome das pessoas</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p style="color: darkgray; font-size:15px;">Data</p>
+                <p style="color: darkgray; font-size:15px;">Local</p>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<p style="font:24px arial, verdana; color: darkgray">...você ainda não respondeu:</p>
+<div class="nao_confirmado">
+    <table>
+        <tr>
+            <td width="20%">
+                <p style="font:18px arial, verdana; margin: 0">Reunião com: </p>
+            </td>
+            <td width="80%" align="right" style="color:red">
+                <span data-tooltip-confirm="Confirmar Presença"><img src="~/Imagens/confirmar.png" width="40px" height="40px"></span>
+            </td>
+        </tr>
+        <tr>
+            <td width="100%">
+                <p style="margin-left: 20px;">Nome das pessoas</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p style="color: darkgray; font-size:15px;">Data</p>
+                <p style="color: darkgray; font-size:15px;">Local</p>
+            </td>
+        </tr>
+    </table>
+</div>
+
