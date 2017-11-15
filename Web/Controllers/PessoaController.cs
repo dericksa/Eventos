@@ -51,30 +51,30 @@ namespace Web.Controllers
         {
             return View();
         }
-        public ActionResult falhaCadastro(string e)
+
+        public ActionResult telaCertificados()
         {
-            ViewBag.mensagem = e;
+            return View();
+        }
+        public ActionResult falhaCadastro(Pessoa p)
+        {
+            ViewBag.nome = p.Nome;
+            ViewBag.curso = p.Curso;
+            ViewBag.id = p.Identificacao;
             return View();
         }
 
-        public JsonResult Test()
-        {
-            return Json("teste", JsonRequestBehavior.AllowGet);
-        }
-
         [HttpPost]
-        public ActionResult cadastroAluno([Bind(Include = "Nome,Identificacao,Curso,Senha")] Pessoa cadastro)
+        public ActionResult cadastroAluno([Bind(Include = "Nome,Identificacao,Curso,Departamento,Grupo,Senha")] Pessoa cadastro)
         {
-
             if (pnCadastro.Inserir(cadastro))
             {
                 return RedirectToAction("Index", "Home");
             }
 
-
             else
             {
-                return RedirectToAction("FalhaCadastro", "Aluno");
+                return RedirectToAction("FalhaCadastro", "Pessoa", cadastro);
                 //return View();
             }
         }

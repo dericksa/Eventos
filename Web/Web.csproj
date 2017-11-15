@@ -194,6 +194,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PessoaController.cs" />
+    <Compile Include="Controllers\ReunioesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -208,10 +209,21 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\cadastro.css" />
+    <Content Include="Content\certificados.css" />
+    <Content Include="Content\eventos.css" />
+    <Content Include="Content\login.css" />
+    <Content Include="Content\marcar_reuniao.css" />
+    <Content Include="Content\reset.css" />
+    <Content Include="Content\calendario.css" />
+    <Content Include="Content\reunioes.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Imagens\cancelar.png" />
+    <Content Include="Imagens\confirmar.png" />
+    <Content Include="Imagens\pdf.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -221,6 +233,7 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-3.0.0.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -270,6 +283,17 @@
     <Content Include="Views\Pessoa\LoginAluno.cshtml" />
     <Content Include="Views\Pessoa\TelaCadastroAluno.cshtml" />
     <Content Include="Views\Pessoa\CadastroAluno.cshtml" />
+    <Content Include="Views\Pessoa\FalhaCadastro.cshtml" />
+    <Content Include="Views\Pessoa\TelaCertificados.cshtml" />
+    <Content Include="Views\Evento\TelaEventos.cshtml" />
+    <Content Include="Views\Reunioes\Create.cshtml" />
+    <Content Include="Views\Reunioes\Delete.cshtml" />
+    <Content Include="Views\Reunioes\Details.cshtml" />
+    <Content Include="Views\Reunioes\Edit.cshtml" />
+    <Content Include="Views\Reunioes\Index.cshtml" />
+    <Content Include="Views\Reunioes\MarcarReuniao.cshtml" />
+    <Content Include="Views\Reunioes\ReunioesAgendadas.cshtml" />
+    <Content Include="Views\Reunioes\TelaCancelarPresenca.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

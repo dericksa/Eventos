@@ -1,0 +1,30 @@
+﻿@model Modelo.DAO.Reuniao
+
+@{
+    ViewBag.Title = "MarcarReuniao";
+}
+
+@Styles.Render("~/Content/marcar_reuniao.css")
+
+<h2 style="text-align: center;">Marcar Reunião</h2>
+
+
+     @using (Html.BeginForm())
+     {
+        <div align="center" margin-left="33%" margin-right="33%">
+            <div>
+                @Html.TextBoxFor(model => model.Participante, htmlAttributes: new { @class = "inputReuniao", @placeholder = "Convidado", @style = "margin: 10px" })
+            </div>
+            <div>
+                @Html.TextBoxFor(model => model.Data, htmlAttributes: new { @type="date", @class = "inputReuniao", @style = "margin: 10px" })
+            </div>
+            <div>
+                @Html.TextBoxFor(model => model.Local, htmlAttributes: new { @class = "inputReuniao", @placeholder = "Local", @style = "margin: 10px" })
+            </div>
+            <div>
+                <input class="submitReuniao" type="submit" value="Marcar Reunião">
+            </div>
+        </div>
+     }
+
+

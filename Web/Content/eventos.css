@@ -1,0 +1,25 @@
+﻿
+.administrador {
+    background: #244352;
+    color: #ffffff;
+    opacity: 0.8;
+    width: 100%;
+    padding: 20px;
+    text-align: justify;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+}
+
+.confirmado {
+    background: #325d72;
+    color: #ffffff;
+    opacity: 0.8;
+    width: 100%;
+    padding: 20px;
+    text-align: justify;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+}
+
