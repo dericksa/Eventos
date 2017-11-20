@@ -61,7 +61,10 @@
   <ItemGroup>
     <Build Include="Pessoa.sql" />
     <Build Include="Horario.sql" />
-    <Build Include="Reuniao.sql" />
+    <Build Include="Eventos.sql" />
     <Build Include="Participante.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="EventosDB.refactorlog" />
   </ItemGroup>
 </Project>
