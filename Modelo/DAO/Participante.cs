@@ -15,10 +15,10 @@ namespace Modelo.DAO
     public partial class Participante
     {
         public int Id_pessoa { get; set; }
-        public int Id_reuniao { get; set; }
         public bool confirmacao { get; set; }
+        public int Id_eventos { get; set; }
     
+        public virtual Evento Evento { get; set; }
         public virtual Pessoa Pessoa { get; set; }
-        public virtual Reuniao Reuniao { get; set; }
     }
 }

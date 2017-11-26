@@ -12,12 +12,13 @@ namespace Modelo.DAO
     using System;
     using System.Collections.Generic;
     
-    public partial class Professor
+    public partial class Palestrante
     {
-        public int Id { get; set; }
-        public string Nome { get; set; }
-        public string Departamento { get; set; }
+        public int Id_pessoa { get; set; }
+        public bool confirmacao { get; set; }
+        public int Id_eventos { get; set; }
     
+        public virtual Evento Evento { get; set; }
         public virtual Pessoa Pessoa { get; set; }
     }
 }

@@ -59,6 +59,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="DAO\Evento.cs">
+      <DependentUpon>Eventos.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAO\Eventos.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -77,19 +80,17 @@
     <Compile Include="DAO\Horario.cs">
       <DependentUpon>Eventos.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAO\Palestrante.cs">
+      <DependentUpon>Eventos.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAO\Participante.cs">
       <DependentUpon>Eventos.tt</DependentUpon>
     </Compile>
     <Compile Include="DAO\Pessoa.cs">
       <DependentUpon>Eventos.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAO\Professor.cs">
-      <DependentUpon>Eventos.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAO\Reuniao.cs">
-      <DependentUpon>Eventos.tt</DependentUpon>
-    </Compile>
     <Compile Include="PN\pnCadastro.cs" />
+    <Compile Include="PN\pnPesquisar.cs" />
     <Compile Include="PN\pnPessoa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -109,6 +110,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="DAO\Eventos.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

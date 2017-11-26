@@ -12,11 +12,12 @@ namespace Modelo.DAO
     using System;
     using System.Collections.Generic;
     
-    public partial class Reuniao
+    public partial class Evento
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Reuniao()
+        public Evento()
         {
+            this.Palestrante = new HashSet<Palestrante>();
             this.Participante = new HashSet<Participante>();
         }
     
@@ -25,9 +26,14 @@ namespace Modelo.DAO
         public bool Cancelado { get; set; }
         public string Local { get; set; }
         public System.DateTime Data { get; set; }
+        public string Descricao { get; set; }
+        public bool Palestra { get; set; }
+        public bool Reuniao { get; set; }
     
+        public virtual Pessoa Pessoa { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Palestrante> Palestrante { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Participante> Participante { get; set; }
-        public virtual Pessoa Pessoa { get; set; }
     }
 }
