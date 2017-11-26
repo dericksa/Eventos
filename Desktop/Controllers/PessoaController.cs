@@ -50,7 +50,7 @@ namespace Desktop.Controllers
                 nova_pessoa.Curso = cadastro.Curso;
                 nova_pessoa.Departamento = cadastro.Departamento;
 
-                pnCadastro.Inserir(nova_pessoa);
+                pnCadastro.Inserir_Pessoa(nova_pessoa);
 
                 return true;
 
