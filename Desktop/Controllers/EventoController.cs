@@ -29,7 +29,7 @@ namespace Desktop.Controllers
                     pnCadastro.Inserir_Evento(novo_evento);
 
 
-
+                    return true;
                 }
 
                 return false;
@@ -39,6 +39,55 @@ namespace Desktop.Controllers
                 return false;
             }
         }
+
+        public static bool Cancelar_Evento(Evento evt)
+        {
+
+            try
+            {
+                if(evt != null)
+                {
+                    if (pnEvento.Cancelar(evt))
+                    {
+                        return true;
+                    }
+                }
+
+                return false;
+
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
+
+        }
+
+
+        public static List<Evento> Meus_Eventos(int pid)
+        {
+            try
+            {
+
+                List<int> eventos_pessoa = pnPesquisar.Pesquisar_Eventos_Pessoa(pid);
+                List<Evento> meus_eventos = new List<Evento>();
+
+                foreach (int id in eventos_pessoa)
+                {
+                    meus_eventos.Add(pnPesquisar.Pesquisar_Eventos_Id(id));
+                }
+
+                return meus_eventos;
+                
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+        }
+
+
+
 
     }
 }

@@ -13,6 +13,7 @@ using MaterialSkin;
 using Desktop.fPrograma;
 using Desktop.Controllers;
 using Modelo.DAO;
+using Desktop.Controllers;
 
 namespace Desktop.fPrograma
 {
@@ -34,7 +35,16 @@ namespace Desktop.fPrograma
 
             novo_evento.Local = txt_Local.Text;
             novo_evento.Descricao = txt_Desc.Text;
-            novo_evento.
+            novo_evento.Criador = Desktop.Properties.Settings.Default.identificacao;
+            novo_evento.Data = evt_Data.Value;
+
+            if (EventoController.Criar_Reuniao(novo_evento))
+            {
+                Console.WriteLine("Cadastrou o evento");
+                TelaInicial form = new TelaInicial();
+                this.Hide();
+                form.Show();
+            }
 
         }
     }

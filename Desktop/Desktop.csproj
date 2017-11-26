@@ -68,6 +68,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EventosDBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="EventosDBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EventosDBDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="fCadastro\formCadastro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +131,17 @@
     </None>
     <None Include="EventosDBDataSet.xss">
       <DependentUpon>EventosDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EventosDBDataSet1.xsc">
+      <DependentUpon>EventosDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="EventosDBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EventosDBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EventosDBDataSet1.xss">
+      <DependentUpon>EventosDBDataSet1.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

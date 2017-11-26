@@ -73,6 +73,7 @@ namespace Login
 
                 if (PessoaController.Autenticacao(l_pessoa))
                 {
+                    Desktop.Properties.Settings.Default.identificacao = l_pessoa.Identificacao;
                     TelaInicial telainicial = new TelaInicial();
                     this.Hide();
                     telainicial.Show();
