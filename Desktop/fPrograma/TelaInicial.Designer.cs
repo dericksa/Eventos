@@ -33,11 +33,6 @@
             this.tab_Inicial = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.SeletorTab = new MaterialSkin.Controls.MaterialTabSelector();
-            this.eventosDBDataSet = new Desktop.EventosDBDataSet();
-            this.reuniaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.reuniaoTableAdapter = new Desktop.EventosDBDataSetTableAdapters.ReuniaoTableAdapter();
             this.box_mReunioes = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,12 +40,18 @@
             this.canceladoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.localDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reuniaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.eventosDBDataSet = new Desktop.EventosDBDataSet();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.SeletorTab = new MaterialSkin.Controls.MaterialTabSelector();
+            this.reuniaoTableAdapter = new Desktop.EventosDBDataSetTableAdapters.ReuniaoTableAdapter();
+            this.btn_NovoEvento = new MaterialSkin.Controls.MaterialRaisedButton();
             this.tab_Inicial.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.eventosDBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reuniaoBindingSource)).BeginInit();
             this.box_mReunioes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reuniaoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eventosDBDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // tab_Inicial
@@ -88,43 +89,9 @@
             this.tabPage2.Text = "Reuniões";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Location = new System.Drawing.Point(-4, 323);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(788, 214);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Reuniões ";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
-            // 
-            // SeletorTab
-            // 
-            this.SeletorTab.BaseTabControl = this.tab_Inicial;
-            this.SeletorTab.Depth = 0;
-            this.SeletorTab.Location = new System.Drawing.Point(-11, 62);
-            this.SeletorTab.MouseState = MaterialSkin.MouseState.HOVER;
-            this.SeletorTab.Name = "SeletorTab";
-            this.SeletorTab.Size = new System.Drawing.Size(813, 35);
-            this.SeletorTab.TabIndex = 1;
-            this.SeletorTab.Click += new System.EventHandler(this.SeletorTab_Click);
-            // 
-            // eventosDBDataSet
-            // 
-            this.eventosDBDataSet.DataSetName = "EventosDBDataSet";
-            this.eventosDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // reuniaoBindingSource
-            // 
-            this.reuniaoBindingSource.DataMember = "Reuniao";
-            this.reuniaoBindingSource.DataSource = this.eventosDBDataSet;
-            // 
-            // reuniaoTableAdapter
-            // 
-            this.reuniaoTableAdapter.ClearBeforeFill = true;
-            // 
             // box_mReunioes
             // 
+            this.box_mReunioes.Controls.Add(this.btn_NovoEvento);
             this.box_mReunioes.Controls.Add(this.dataGridView1);
             this.box_mReunioes.Location = new System.Drawing.Point(3, 28);
             this.box_mReunioes.Name = "box_mReunioes";
@@ -192,6 +159,56 @@
             this.dataDataGridViewTextBoxColumn.HeaderText = "Data";
             this.dataDataGridViewTextBoxColumn.Name = "dataDataGridViewTextBoxColumn";
             // 
+            // reuniaoBindingSource
+            // 
+            this.reuniaoBindingSource.DataMember = "Reuniao";
+            this.reuniaoBindingSource.DataSource = this.eventosDBDataSet;
+            // 
+            // eventosDBDataSet
+            // 
+            this.eventosDBDataSet.DataSetName = "EventosDBDataSet";
+            this.eventosDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Location = new System.Drawing.Point(-4, 323);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(788, 214);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Reuniões ";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // SeletorTab
+            // 
+            this.SeletorTab.BaseTabControl = this.tab_Inicial;
+            this.SeletorTab.Depth = 0;
+            this.SeletorTab.Location = new System.Drawing.Point(-11, 62);
+            this.SeletorTab.MouseState = MaterialSkin.MouseState.HOVER;
+            this.SeletorTab.Name = "SeletorTab";
+            this.SeletorTab.Size = new System.Drawing.Size(813, 35);
+            this.SeletorTab.TabIndex = 1;
+            this.SeletorTab.Click += new System.EventHandler(this.SeletorTab_Click);
+            // 
+            // reuniaoTableAdapter
+            // 
+            this.reuniaoTableAdapter.ClearBeforeFill = true;
+            // 
+            // btn_NovoEvento
+            // 
+            this.btn_NovoEvento.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_NovoEvento.Depth = 0;
+            this.btn_NovoEvento.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_NovoEvento.Location = new System.Drawing.Point(6, 19);
+            this.btn_NovoEvento.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_NovoEvento.Name = "btn_NovoEvento";
+            this.btn_NovoEvento.Primary = true;
+            this.btn_NovoEvento.Size = new System.Drawing.Size(108, 15);
+            this.btn_NovoEvento.TabIndex = 1;
+            this.btn_NovoEvento.Text = "Novo Evento";
+            this.btn_NovoEvento.UseVisualStyleBackColor = true;
+            this.btn_NovoEvento.Click += new System.EventHandler(this.btn_NovoEvento_Click);
+            // 
             // TelaInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -206,10 +223,10 @@
             this.Load += new System.EventHandler(this.TelaInicial_Load);
             this.tab_Inicial.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.eventosDBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reuniaoBindingSource)).EndInit();
             this.box_mReunioes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reuniaoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eventosDBDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -231,5 +248,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn canceladoDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn localDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataDataGridViewTextBoxColumn;
+        private MaterialSkin.Controls.MaterialRaisedButton btn_NovoEvento;
     }
 }

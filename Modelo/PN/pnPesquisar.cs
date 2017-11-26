@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Modelo.PN
 {
-    class pnPesquisar
+    public class pnPesquisar
     {
         public static Pessoa Pesquisar(int id)
         {

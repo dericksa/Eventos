@@ -46,6 +46,44 @@ namespace Modelo.PN
 
         }
 
+        public static bool Inserir_Participante(Participante p)
+        {
+            try
+            {
+                EventosEntities db = new EventosEntities();
+
+                db.Participante.Add(p);
+                db.SaveChanges();
+
+                return true;
+
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+
+        }
+
+        public static bool Inserir_Palestrante(Palestrante p)
+        {
+            try
+            {
+                EventosEntities db = new EventosEntities();
+
+                db.Palestrante.Add(p);
+                db.SaveChanges();
+
+                return true;
+
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+
+        }
+
         public static bool Inserir_Horario(Horario h)
         {
             try

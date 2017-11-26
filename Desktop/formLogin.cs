@@ -57,7 +57,7 @@ namespace Login
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Cadastro cadastroForm = new Cadastro();
+            Desktop.fCadastro.Cadastro cadastroForm = new Desktop.fCadastro.Cadastro();
             this.Hide();
             cadastroForm.Show();
             

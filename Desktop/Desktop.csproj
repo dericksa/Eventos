@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\EventoController.cs" />
     <Compile Include="Controllers\PessoaController.cs" />
     <Compile Include="EventosDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -79,6 +80,12 @@
     <Compile Include="formLogin.Designer.cs">
       <DependentUpon>formLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="fPrograma\CadastroReuniao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fPrograma\CadastroReuniao.Designer.cs">
+      <DependentUpon>CadastroReuniao.cs</DependentUpon>
+    </Compile>
     <Compile Include="fPrograma\TelaInicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formLogin.resx">
       <DependentUpon>formLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fPrograma\CadastroReuniao.resx">
+      <DependentUpon>CadastroReuniao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fPrograma\TelaInicial.resx">
       <DependentUpon>TelaInicial.cs</DependentUpon>

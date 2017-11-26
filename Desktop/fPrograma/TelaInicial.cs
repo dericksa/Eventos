@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MaterialSkin.Animations;
 using MaterialSkin.Controls;
 using MaterialSkin;
+using Desktop.fPrograma;
 
 namespace Desktop.fPrograma
 {
@@ -46,6 +47,13 @@ namespace Desktop.fPrograma
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btn_NovoEvento_Click(object sender, EventArgs e)
+        {
+            CadastroReuniao form = new CadastroReuniao();
+            this.Hide();
+            form.Show();
         }
     }
 }

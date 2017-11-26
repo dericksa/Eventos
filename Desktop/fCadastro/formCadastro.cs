@@ -84,7 +84,9 @@ namespace Desktop.fCadastro
 
             if (PessoaController.Cadastro(novo_cadastro))
             {
-                Debug.WriteLine("Cadastrou");
+                Login.Login form = new Login.Login();
+                this.Hide();
+                form.Show();
             }
 
         }
