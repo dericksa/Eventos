@@ -38,7 +38,11 @@ namespace Desktop.fPrograma
 
         private void handle_DataGrid()
         {
+            /*Aqui define o DataSource da tabela
+            Desktop.Properties.Settings.Default.identificacao é o login salvo para utilizar em todos os forms*/
             BindingSource bind = new BindingSource();
+
+            /*Lista todos os eventos do usuário (Criador) pela função do Controller*/
             bind.DataSource = EventoController.Meus_Eventos(Desktop.Properties.Settings.Default.identificacao).ToList();
             data_MeusEventos.DataSource = bind;
             data_MeusEventos.Refresh();
@@ -66,6 +70,7 @@ namespace Desktop.fPrograma
 
         private void btn_NovoEvento_Click(object sender, EventArgs e)
         {
+            /*Mudar de tela*/
             CadastroReuniao form = new CadastroReuniao();
             this.Hide();
             form.Show();
@@ -73,11 +78,14 @@ namespace Desktop.fPrograma
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
+            /*O if verifica se a coluna da linha clicada, se clicou na coluna cancelar é porque clicou no botão*/
             if(data_MeusEventos.Columns[e.ColumnIndex].Name == "Cancelar")
             {
                 Evento evento_cancelado = new Evento();
+                /*Pega o ID do evento daquela linha*/
                 evento_cancelado.Id = int.Parse(data_MeusEventos.CurrentRow.Cells[0].Value.ToString());
                 evento_cancelado.Cancelado = true;
+                /*Cancela o Evento*/
                 if (EventoController.Cancelar_Evento(evento_cancelado))
                 {
                     MessageBox.Show("Cancelou");

@@ -9,7 +9,7 @@ namespace Modelo.PN
 {
     public class pnEvento
     {
-
+        /*Muda o status do evento para cancelado*/
         public static bool Cancelar(Evento evt)
         {
             try

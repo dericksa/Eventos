@@ -63,17 +63,18 @@ namespace Desktop.Controllers
 
         }
 
-
+        /*Função lista os Eventos da Pessoa (Criador)*/
         public static List<Evento> Meus_Eventos(int pid)
         {
             try
             {
-
+                /*Pega a lista de eventos (ids) que a pessoa criou*/
                 List<int> eventos_pessoa = pnPesquisar.Pesquisar_Eventos_Pessoa(pid);
                 List<Evento> meus_eventos = new List<Evento>();
 
                 foreach (int id in eventos_pessoa)
                 {
+                    /*Para cada id retorna um evento e coloca na lista*/
                     meus_eventos.Add(pnPesquisar.Pesquisar_Eventos_Id(id));
                 }
 

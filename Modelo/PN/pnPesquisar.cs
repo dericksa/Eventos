@@ -27,7 +27,7 @@ namespace Modelo.PN
             }
         }
 
-
+        /*Retorna uma lista de ID de Eventos que a pessoa participa*/
         public static List<int> Pesquisar_Eventos(int id)
         {
             try
@@ -43,13 +43,14 @@ namespace Modelo.PN
             }
         }
 
+        /*Retorna um Evento com base em uma id*/
         public static Evento Pesquisar_Eventos_Id(int id_evento)
         {
             try
             {
                 EventosEntities db = new EventosEntities();
 
-                Evento evento = db.Evento.Where(r => r.Id == id_evento).FirstOrDefault() ;
+                Evento evento = db.Evento.Where(r => r.Id == id_evento).FirstOrDefault();
 
                 return evento;
             }
@@ -59,13 +60,15 @@ namespace Modelo.PN
             }
         }
 
-
+        /*Retorna uma lista de IDS de Eventos que a pessoa criou*/
         public static List<int> Pesquisar_Eventos_Pessoa(int id)
         {
             try
             {
                 EventosEntities db = new EventosEntities();
 
+                /*Where compara o r( da tabela) com o id por parametro
+                 Se for igual, ele seleciona todos os iguais e pega o id e coloca em lista*/
                 List<int> Eventos = db.Evento.Where(r => r.Criador == id).Select(x => x.Id).ToList();
 
                 return Eventos;
