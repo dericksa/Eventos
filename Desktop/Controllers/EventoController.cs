@@ -40,19 +40,20 @@ namespace Desktop.Controllers
             }
         }
 
-        public static bool Cancelar_Evento(Evento evt)
+        public static bool Cancelar_Evento(int id)
         {
 
             try
             {
-                if(evt != null)
-                {
-                    if (pnEvento.Cancelar(evt))
-                    {
-                        return true;
-                    }
-                }
+ 
+            Evento evt = new Evento();
 
+            evt = pnPesquisar.Pesquisar_Eventos_Id(id);
+            evt.Cancelado = true;
+            if (pnEditar.Editar_Evento(evt))
+            {
+                return true;
+            }
                 return false;
 
             }
@@ -64,7 +65,7 @@ namespace Desktop.Controllers
         }
 
         /*Função lista os Eventos da Pessoa (Criador)*/
-        public static List<Evento> Meus_Eventos(int pid)
+        public static List<Evento> Minhas_Reunioes(int pid)
         {
             try
             {
@@ -74,8 +75,10 @@ namespace Desktop.Controllers
 
                 foreach (int id in eventos_pessoa)
                 {
-                    /*Para cada id retorna um evento e coloca na lista*/
-                    meus_eventos.Add(pnPesquisar.Pesquisar_Eventos_Id(id));
+                    Evento evento = new Evento();
+                    evento = pnPesquisar.Pesquisar_Eventos_Id(id);
+                    if(evento.Reuniao)
+                        meus_eventos.Add(evento);
                 }
 
                 return meus_eventos;
@@ -86,9 +89,6 @@ namespace Desktop.Controllers
                 throw;
             }
         }
-
-
-
 
     }
 }

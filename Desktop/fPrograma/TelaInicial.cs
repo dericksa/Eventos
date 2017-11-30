@@ -19,10 +19,19 @@ namespace Desktop.fPrograma
 {
     public partial class TelaInicial : MaterialForm
     {
+        private int id_login;
         public TelaInicial()
         {
             InitializeComponent();
+            id_login = Desktop.Properties.Settings.Default.identificacao;
             handle_DataGrid();
+
+            if (PessoaController.is_Admin(id_login))
+            {
+                btn_Admin.Visible = true;
+                this.Refresh();
+            }
+       
 
         }
 
@@ -43,7 +52,7 @@ namespace Desktop.fPrograma
             BindingSource bind = new BindingSource();
 
             /*Lista todos os eventos do usuário (Criador) pela função do Controller*/
-            bind.DataSource = EventoController.Meus_Eventos(Desktop.Properties.Settings.Default.identificacao).ToList();
+            bind.DataSource = EventoController.Minhas_Reunioes(id_login).ToList();
             data_MeusEventos.DataSource = bind;
             data_MeusEventos.Refresh();
         }
@@ -84,14 +93,25 @@ namespace Desktop.fPrograma
                 Evento evento_cancelado = new Evento();
                 /*Pega o ID do evento daquela linha*/
                 evento_cancelado.Id = int.Parse(data_MeusEventos.CurrentRow.Cells[0].Value.ToString());
-                evento_cancelado.Cancelado = true;
                 /*Cancela o Evento*/
-                if (EventoController.Cancelar_Evento(evento_cancelado))
+                if (EventoController.Cancelar_Evento(evento_cancelado.Id))
                 {
                     MessageBox.Show("Cancelou");
                     handle_DataGrid();
                 }
             }
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Admin_Click(object sender, EventArgs e)
+        {
+            Desktop.fAdmin.form_Adm form = new Desktop.fAdmin.form_Adm();
+            this.Hide();
+            form.Show();
         }
     }
 }

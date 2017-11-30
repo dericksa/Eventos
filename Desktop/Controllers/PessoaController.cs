@@ -16,10 +16,10 @@ namespace Desktop.Controllers
         {
             try
             {
-                if (pnPessoa.Pesquisar(login.Identificacao) != null)
+                if (pnPesquisar.Pesquisar(login.Identificacao) != null)
                 {
                     Pessoa cadastrado = new Pessoa();          
-                    cadastrado = pnPessoa.Pesquisar(login.Identificacao);
+                    cadastrado = pnPesquisar.Pesquisar(login.Identificacao);
 
                     if(login.Senha == cadastrado.Senha)
                     {
@@ -28,6 +28,65 @@ namespace Desktop.Controllers
                 }
 
                 return false;
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
+
+        public static bool is_Admin(int id)
+        {
+            try
+            {
+                if (pnPesquisar.Pesquisar(id).Adm == true)
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public static bool Mudar_Permissao(int id, string perm)
+        {
+            try
+            {
+
+                Pessoa pessoa = new Pessoa();
+                pessoa = pnPesquisar.Pesquisar(id);
+
+                pessoa.Palestrante = pessoa.Organizador = pessoa.Adm = false;
+
+                if(perm.Equals("Aluno") || perm.Equals("Professor"))
+                {
+                    pessoa.Grupo = perm;
+                }
+                else if (perm.Equals("Administrador"))
+                {
+                    pessoa.Adm = true;
+                }
+                else if (perm.Equals("Palestrante"))
+                {
+                    pessoa.Palestrante = true;
+                }
+                else if (perm.Equals("Organizador"))
+                {
+                    pessoa.Organizador = true;
+                }
+
+                if (pnEditar.Editar_Pessoa(pessoa))
+                {
+                    Console.WriteLine("Editou\n");
+                }
+
+                return true;
+
 
             }
             catch (Exception)

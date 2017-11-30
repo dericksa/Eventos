@@ -90,9 +90,9 @@
       <DependentUpon>Eventos.tt</DependentUpon>
     </Compile>
     <Compile Include="PN\pnCadastro.cs" />
+    <Compile Include="PN\pnEditar.cs" />
     <Compile Include="PN\pnEvento.cs" />
     <Compile Include="PN\pnPesquisar.cs" />
-    <Compile Include="PN\pnPessoa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

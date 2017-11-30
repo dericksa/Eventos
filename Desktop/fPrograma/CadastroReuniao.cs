@@ -37,9 +37,14 @@ namespace Desktop.fPrograma
             novo_evento.Descricao = txt_Desc.Text;
             novo_evento.Criador = Desktop.Properties.Settings.Default.identificacao;
             novo_evento.Data = evt_Data.Value;
+            novo_evento.Reuniao = true;
+
+            Participante part = new Participante();
+            part.Id_pessoa = int.Parse(txt_Convidado.Text);
 
             if (EventoController.Criar_Reuniao(novo_evento))
             {
+
                 Console.WriteLine("Cadastrou o evento");
                 TelaInicial form = new TelaInicial();
                 this.Hide();

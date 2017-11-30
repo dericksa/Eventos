@@ -34,6 +34,7 @@ namespace Modelo.PN
             {
                 EventosEntities db = new EventosEntities();
 
+
                return db.Participante.Where(r => r.Id_pessoa == id).Select(x => x.Id_eventos).ToList();
 
             }
