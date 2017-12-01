@@ -8,5 +8,6 @@
     [Descricao] VARCHAR(MAX) NOT NULL, 
     [Palestra] BIT NOT NULL, 
     [Reuniao] BIT NOT NULL, 
+    [Privado] BIT NOT NULL, 
     CONSTRAINT [Criador] FOREIGN KEY ([Criador]) REFERENCES [Pessoa]([Identificacao])
 )

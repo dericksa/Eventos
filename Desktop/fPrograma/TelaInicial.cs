@@ -39,8 +39,7 @@ namespace Desktop.fPrograma
         {
             // TODO: esta linha de código carrega dados na tabela 'eventosDBDataSet1.Evento'. Você pode movê-la ou removê-la conforme necessário.
             this.eventoTableAdapter.Fill(this.eventosDBDataSet1.Evento);
-            // TODO: esta linha de código carrega dados na tabela 'eventosDBDataSet.Reuniao'. Você pode movê-la ou removê-la conforme necessário.
-            this.reuniaoTableAdapter.Fill(this.eventosDBDataSet.Reuniao);
+                   
 
          
         }
