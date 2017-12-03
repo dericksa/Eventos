@@ -24,7 +24,8 @@ namespace Desktop.fPrograma
         {
             InitializeComponent();
             id_login = Desktop.Properties.Settings.Default.identificacao;
-            handle_DataGrid();
+            handle_MinhasReunioes();
+            handle_MeusConvites();
 
             if (PessoaController.is_Admin(id_login))
             {
@@ -37,6 +38,8 @@ namespace Desktop.fPrograma
 
         private void TelaInicial_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'eventosDBDataSet2.Participante'. Você pode movê-la ou removê-la conforme necessário.
+            this.participanteTableAdapter.Fill(this.eventosDBDataSet2.Participante);
             // TODO: esta linha de código carrega dados na tabela 'eventosDBDataSet1.Evento'. Você pode movê-la ou removê-la conforme necessário.
             this.eventoTableAdapter.Fill(this.eventosDBDataSet1.Evento);
             // TODO: esta linha de código carrega dados na tabela 'eventosDBDataSet.Reuniao'. Você pode movê-la ou removê-la conforme necessário.
@@ -45,7 +48,7 @@ namespace Desktop.fPrograma
          
         }
 
-        private void handle_DataGrid()
+        private void handle_MinhasReunioes()
         {
             /*Aqui define o DataSource da tabela
             Desktop.Properties.Settings.Default.identificacao é o login salvo para utilizar em todos os forms*/
@@ -55,6 +58,18 @@ namespace Desktop.fPrograma
             bind.DataSource = EventoController.Minhas_Reunioes(id_login).ToList();
             data_MeusEventos.DataSource = bind;
             data_MeusEventos.Refresh();
+        }
+
+        private void handle_MeusConvites()
+        {
+            /*Aqui define o DataSource da tabela
+            Desktop.Properties.Settings.Default.identificacao é o login salvo para utilizar em todos os forms*/
+            BindingSource bind = new BindingSource();
+
+            /*Lista todos os eventos do usuário (Criador) pela função do Controller*/
+            bind.DataSource = ParticipanteController.Meus_Convites_Reuniao(id_login).ToList();
+            data_MeusConvites.DataSource = bind;
+            data_MeusConvites.Refresh();
         }
 
         private void SeletorTab_Click(object sender, EventArgs e)
@@ -97,7 +112,7 @@ namespace Desktop.fPrograma
                 if (EventoController.Cancelar_Evento(evento_cancelado.Id))
                 {
                     MessageBox.Show("Cancelou");
-                    handle_DataGrid();
+                    handle_MinhasReunioes();
                 }
             }
         }
@@ -112,6 +127,37 @@ namespace Desktop.fPrograma
             Desktop.fAdmin.form_Adm form = new Desktop.fAdmin.form_Adm();
             this.Hide();
             form.Show();
+        }
+
+        private void dataGridView1_CellContentClick_2(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (data_MeusConvites.Columns[e.ColumnIndex].Name == "Confirmar")
+            {
+                int evento = int.Parse(data_MeusConvites.CurrentRow.Cells[0].Value.ToString());
+                if (ParticipanteController.Confirmar_Participacao(id_login, evento)){
+                    MessageBox.Show("Confirmou");
+                    handle_MeusConvites();
+                }
+            }
+
+            if (data_MeusConvites.Columns[e.ColumnIndex].Name == "Recusar")
+            {
+                int evento = int.Parse(data_MeusConvites.CurrentRow.Cells[0].Value.ToString());
+                if(ParticipanteController.Recusar_Participacao(id_login, evento))
+                {
+                    MessageBox.Show("Recusou");
+                    handle_MeusConvites();
+                }
+            }
+        }
+
+        private void btn_Horario_Click(object sender, EventArgs e)
+        {
+            if(ProfessorController.Cadastrar_Horario(id_login, date_Horario.Value))
+            {
+                MessageBox.Show("Cadastrou Horario");
+            }
         }
     }
 }

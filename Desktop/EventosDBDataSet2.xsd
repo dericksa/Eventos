@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EventosDBDataSet2" targetNamespace="http://tempuri.org/EventosDBDataSet2.xsd" xmlns:mstns="http://tempuri.org/EventosDBDataSet2.xsd" xmlns="http://tempuri.org/EventosDBDataSet2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="EventosDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="EventosDBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Desktop.Properties.Settings.GlobalReference.Default.EventosDBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ParticipanteTableAdapter" GeneratorDataComponentClassName="ParticipanteTableAdapter" Name="Participante" UserDataComponentName="ParticipanteTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="EventosDBConnectionString (Settings)" DbObjectName="EventosDB.dbo.Participante" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT confirmacao, Id_eventos FROM dbo.Participante</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="confirmacao" DataSetColumn="confirmacao" />
+              <Mapping SourceColumn="Id_eventos" DataSetColumn="Id_eventos" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EventosDBDataSet2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="EventosDBDataSet2" msprop:Generator_UserDSName="EventosDBDataSet2">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Participante" msprop:Generator_TableClassName="ParticipanteDataTable" msprop:Generator_TableVarName="tableParticipante" msprop:Generator_TablePropName="Participante" msprop:Generator_RowDeletingName="ParticipanteRowDeleting" msprop:Generator_RowChangingName="ParticipanteRowChanging" msprop:Generator_RowEvHandlerName="ParticipanteRowChangeEventHandler" msprop:Generator_RowDeletedName="ParticipanteRowDeleted" msprop:Generator_UserTableName="Participante" msprop:Generator_RowChangedName="ParticipanteRowChanged" msprop:Generator_RowEvArgName="ParticipanteRowChangeEvent" msprop:Generator_RowClassName="ParticipanteRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="confirmacao" msprop:Generator_ColumnVarNameInTable="columnconfirmacao" msprop:Generator_ColumnPropNameInRow="confirmacao" msprop:Generator_ColumnPropNameInTable="confirmacaoColumn" msprop:Generator_UserColumnName="confirmacao" type="xs:boolean" />
+              <xs:element name="Id_eventos" msprop:Generator_ColumnVarNameInTable="columnId_eventos" msprop:Generator_ColumnPropNameInRow="Id_eventos" msprop:Generator_ColumnPropNameInTable="Id_eventosColumn" msprop:Generator_UserColumnName="Id_eventos" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

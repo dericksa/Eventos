@@ -39,10 +39,9 @@ namespace Desktop.fPrograma
             novo_evento.Data = evt_Data.Value;
             novo_evento.Reuniao = true;
 
-            Participante part = new Participante();
-            part.Id_pessoa = int.Parse(txt_Convidado.Text);
+            int part = int.Parse(txt_Convidado.Text);
 
-            if (EventoController.Criar_Reuniao(novo_evento))
+            if (EventoController.Criar_Reuniao(novo_evento, part))
             {
 
                 Console.WriteLine("Cadastrou o evento");

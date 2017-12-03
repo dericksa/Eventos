@@ -89,9 +89,9 @@
     <Compile Include="DAO\Pessoa.cs">
       <DependentUpon>Eventos.tt</DependentUpon>
     </Compile>
+    <Compile Include="PN\pnApagar.cs" />
     <Compile Include="PN\pnCadastro.cs" />
     <Compile Include="PN\pnEditar.cs" />
-    <Compile Include="PN\pnEvento.cs" />
     <Compile Include="PN\pnPesquisar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

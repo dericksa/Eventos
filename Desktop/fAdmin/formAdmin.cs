@@ -47,5 +47,54 @@ namespace Desktop.fAdmin
             PessoaController.Mudar_Permissao(id, perm);
 
         }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            Evento novo_evento = new Evento();
+
+            novo_evento.Local = txt_Local.Text;
+            novo_evento.Descricao = txt_Desc.Text;
+            novo_evento.Criador = int.Parse(txt_Palestrante.Text);
+            novo_evento.Data = evt_Data.Value;
+            novo_evento.Palestra = true;
+
+            if (EventoController.Criar_Palestra(novo_evento))
+            {
+                Console.WriteLine("Cadastrou o evento");
+            }
+
+        }
+
+        private void grp_Palestra_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialRaisedButton1_Click(object sender, EventArgs e)
+        {
+            Evento evento = new Evento();
+            evento.Descricao = txt_desceditar.Text;
+            evento.Local = txt_localeditar.Text;
+            evento.Id = int.Parse(txt_ideditar.Text);
+
+            if (EventoController.Editar_Palestra(evento))
+            {
+                MessageBox.Show("Editou");
+            }
+        }
+
+        private void btn_Confirmar_Click(object sender, EventArgs e)
+        {
+             if(txt_LeituraId != null && txt_LeituraEv != null)
+            {
+                int id_evento = int.Parse(txt_LeituraEv.Text);
+                int id_pessoa = int.Parse(txt_LeituraId.Text);
+                ParticipanteController.Novo_Participante(id_pessoa, id_evento);
+                if(ParticipanteController.Confirmar_Participacao(id_pessoa, id_evento))
+                {
+                    MessageBox.Show("Confirmado");
+                }
+             }
+        }
     }
 }

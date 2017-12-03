@@ -62,7 +62,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\EventoController.cs" />
+    <Compile Include="Controllers\ParticipanteController.cs" />
     <Compile Include="Controllers\PessoaController.cs" />
+    <Compile Include="Controllers\ProfessorController.cs" />
     <Compile Include="EventosDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -72,6 +74,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EventosDBDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EventosDBDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EventosDBDataSet2.xsd</DependentUpon>
     </Compile>
     <Compile Include="fAdmin\formAdmin.cs">
       <SubType>Form</SubType>
@@ -151,6 +158,17 @@
     </None>
     <None Include="EventosDBDataSet1.xss">
       <DependentUpon>EventosDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="EventosDBDataSet2.xsc">
+      <DependentUpon>EventosDBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="EventosDBDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EventosDBDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EventosDBDataSet2.xss">
+      <DependentUpon>EventosDBDataSet2.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

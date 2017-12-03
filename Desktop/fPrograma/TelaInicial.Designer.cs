@@ -30,7 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.TabPage Reunioes;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.box_mReunioes = new System.Windows.Forms.GroupBox();
             this.btn_NovoEvento = new MaterialSkin.Controls.MaterialRaisedButton();
             this.data_MeusEventos = new System.Windows.Forms.DataGridView();
@@ -52,15 +53,32 @@
             this.reuniaoTableAdapter = new Desktop.EventosDBDataSetTableAdapters.ReuniaoTableAdapter();
             this.eventoTableAdapter = new Desktop.EventosDBDataSet1TableAdapters.EventoTableAdapter();
             this.btn_Admin = new MaterialSkin.Controls.MaterialFlatButton();
+            this.data_MeusConvites = new System.Windows.Forms.DataGridView();
+            this.eventosDBDataSet2 = new Desktop.EventosDBDataSet2();
+            this.participanteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.participanteTableAdapter = new Desktop.EventosDBDataSet2TableAdapters.ParticipanteTableAdapter();
+            this.ideventosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.confirmacaoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Confirmar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Recusar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.grp_Horarios = new System.Windows.Forms.GroupBox();
+            this.date_Horario = new System.Windows.Forms.DateTimePicker();
+            this.btn_Horario = new MaterialSkin.Controls.MaterialRaisedButton();
             Reunioes = new System.Windows.Forms.TabPage();
             Reunioes.SuspendLayout();
             this.box_mReunioes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_MeusEventos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventosDBDataSet1)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.tab_Inicial.SuspendLayout();
+            this.tab_Eventos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reuniaoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventosDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.data_MeusConvites)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eventosDBDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.participanteBindingSource)).BeginInit();
+            this.grp_Horarios.SuspendLayout();
             this.SuspendLayout();
             // 
             // Reunioes
@@ -104,20 +122,21 @@
             // 
             // data_MeusEventos
             // 
-            this.data_MeusEventos.AllowUserToOrderColumns = true;
+            this.data_MeusEventos.AllowUserToAddRows = false;
+            this.data_MeusEventos.AllowUserToDeleteRows = false;
             this.data_MeusEventos.AutoGenerateColumns = false;
             this.data_MeusEventos.BackgroundColor = System.Drawing.Color.White;
             this.data_MeusEventos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.data_MeusEventos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.data_MeusEventos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.data_MeusEventos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.data_MeusEventos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.data_MeusEventos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.data_MeusEventos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -198,9 +217,10 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.data_MeusConvites);
             this.groupBox2.Location = new System.Drawing.Point(-4, 323);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(788, 214);
+            this.groupBox2.Size = new System.Drawing.Size(516, 214);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Reuniões ";
@@ -208,8 +228,8 @@
             // 
             // tab_Inicial
             // 
-            this.tab_Inicial.Controls.Add(this.tab_Eventos);
             this.tab_Inicial.Controls.Add(Reunioes);
+            this.tab_Inicial.Controls.Add(this.tab_Eventos);
             this.tab_Inicial.Depth = 0;
             this.tab_Inicial.Location = new System.Drawing.Point(0, 103);
             this.tab_Inicial.MouseState = MaterialSkin.MouseState.HOVER;
@@ -220,12 +240,13 @@
             // 
             // tab_Eventos
             // 
+            this.tab_Eventos.Controls.Add(this.grp_Horarios);
             this.tab_Eventos.Location = new System.Drawing.Point(4, 22);
             this.tab_Eventos.Name = "tab_Eventos";
             this.tab_Eventos.Padding = new System.Windows.Forms.Padding(3);
             this.tab_Eventos.Size = new System.Drawing.Size(794, 548);
             this.tab_Eventos.TabIndex = 0;
-            this.tab_Eventos.Text = "Eventos";
+            this.tab_Eventos.Text = "Geral";
             this.tab_Eventos.UseVisualStyleBackColor = true;
             this.tab_Eventos.Click += new System.EventHandler(this.tabPage1_Click);
             // 
@@ -276,6 +297,114 @@
             this.btn_Admin.Visible = false;
             this.btn_Admin.Click += new System.EventHandler(this.btn_Admin_Click);
             // 
+            // data_MeusConvites
+            // 
+            this.data_MeusConvites.AllowUserToAddRows = false;
+            this.data_MeusConvites.AllowUserToDeleteRows = false;
+            this.data_MeusConvites.AutoGenerateColumns = false;
+            this.data_MeusConvites.BackgroundColor = System.Drawing.Color.White;
+            this.data_MeusConvites.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.data_MeusConvites.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.data_MeusConvites.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.data_MeusConvites.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.data_MeusConvites.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.data_MeusConvites.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ideventosDataGridViewTextBoxColumn,
+            this.confirmacaoDataGridViewCheckBoxColumn,
+            this.Confirmar,
+            this.Recusar});
+            this.data_MeusConvites.DataSource = this.participanteBindingSource;
+            this.data_MeusConvites.EnableHeadersVisualStyles = false;
+            this.data_MeusConvites.Location = new System.Drawing.Point(25, 19);
+            this.data_MeusConvites.Name = "data_MeusConvites";
+            this.data_MeusConvites.ReadOnly = true;
+            this.data_MeusConvites.Size = new System.Drawing.Size(459, 193);
+            this.data_MeusConvites.TabIndex = 2;
+            this.data_MeusConvites.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_2);
+            // 
+            // eventosDBDataSet2
+            // 
+            this.eventosDBDataSet2.DataSetName = "EventosDBDataSet2";
+            this.eventosDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // participanteBindingSource
+            // 
+            this.participanteBindingSource.DataMember = "Participante";
+            this.participanteBindingSource.DataSource = this.eventosDBDataSet2;
+            // 
+            // participanteTableAdapter
+            // 
+            this.participanteTableAdapter.ClearBeforeFill = true;
+            // 
+            // ideventosDataGridViewTextBoxColumn
+            // 
+            this.ideventosDataGridViewTextBoxColumn.DataPropertyName = "Id_eventos";
+            this.ideventosDataGridViewTextBoxColumn.HeaderText = "Reunião";
+            this.ideventosDataGridViewTextBoxColumn.Name = "ideventosDataGridViewTextBoxColumn";
+            this.ideventosDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // confirmacaoDataGridViewCheckBoxColumn
+            // 
+            this.confirmacaoDataGridViewCheckBoxColumn.DataPropertyName = "confirmacao";
+            this.confirmacaoDataGridViewCheckBoxColumn.HeaderText = "Confirmado";
+            this.confirmacaoDataGridViewCheckBoxColumn.Name = "confirmacaoDataGridViewCheckBoxColumn";
+            this.confirmacaoDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // Confirmar
+            // 
+            this.Confirmar.HeaderText = "Confirmar";
+            this.Confirmar.Name = "Confirmar";
+            this.Confirmar.ReadOnly = true;
+            this.Confirmar.Text = "Confirmar";
+            this.Confirmar.UseColumnTextForButtonValue = true;
+            // 
+            // Recusar
+            // 
+            this.Recusar.HeaderText = "Recusar";
+            this.Recusar.Name = "Recusar";
+            this.Recusar.ReadOnly = true;
+            this.Recusar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Recusar.Text = "Recusar";
+            this.Recusar.UseColumnTextForButtonValue = true;
+            // 
+            // grp_Horarios
+            // 
+            this.grp_Horarios.Controls.Add(this.btn_Horario);
+            this.grp_Horarios.Controls.Add(this.date_Horario);
+            this.grp_Horarios.Location = new System.Drawing.Point(8, 22);
+            this.grp_Horarios.Name = "grp_Horarios";
+            this.grp_Horarios.Size = new System.Drawing.Size(256, 139);
+            this.grp_Horarios.TabIndex = 0;
+            this.grp_Horarios.TabStop = false;
+            this.grp_Horarios.Text = "Horários";
+            // 
+            // date_Horario
+            // 
+            this.date_Horario.Location = new System.Drawing.Point(24, 39);
+            this.date_Horario.Name = "date_Horario";
+            this.date_Horario.Size = new System.Drawing.Size(200, 20);
+            this.date_Horario.TabIndex = 0;
+            // 
+            // btn_Horario
+            // 
+            this.btn_Horario.Depth = 0;
+            this.btn_Horario.Location = new System.Drawing.Point(72, 91);
+            this.btn_Horario.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_Horario.Name = "btn_Horario";
+            this.btn_Horario.Primary = true;
+            this.btn_Horario.Size = new System.Drawing.Size(98, 23);
+            this.btn_Horario.TabIndex = 1;
+            this.btn_Horario.Text = "Cadastrar";
+            this.btn_Horario.UseVisualStyleBackColor = true;
+            this.btn_Horario.Click += new System.EventHandler(this.btn_Horario_Click);
+            // 
             // TelaInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -294,9 +423,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.data_MeusEventos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventosDBDataSet1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
             this.tab_Inicial.ResumeLayout(false);
+            this.tab_Eventos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.reuniaoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventosDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.data_MeusConvites)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eventosDBDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.participanteBindingSource)).EndInit();
+            this.grp_Horarios.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -325,5 +460,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn Cancelar;
         private MaterialSkin.Controls.MaterialFlatButton btn_Admin;
+        private System.Windows.Forms.DataGridView data_MeusConvites;
+        private EventosDBDataSet2 eventosDBDataSet2;
+        private System.Windows.Forms.BindingSource participanteBindingSource;
+        private EventosDBDataSet2TableAdapters.ParticipanteTableAdapter participanteTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ideventosDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn confirmacaoDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn Confirmar;
+        private System.Windows.Forms.DataGridViewButtonColumn Recusar;
+        private System.Windows.Forms.GroupBox grp_Horarios;
+        private MaterialSkin.Controls.MaterialRaisedButton btn_Horario;
+        private System.Windows.Forms.DateTimePicker date_Horario;
     }
 }

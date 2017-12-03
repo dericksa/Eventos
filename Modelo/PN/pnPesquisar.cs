@@ -9,6 +9,8 @@ namespace Modelo.PN
 {
     public class pnPesquisar
     {
+
+        /******************************  Pessoa ***************************************/
         public static Pessoa Pesquisar(int id)
         {
             try
@@ -26,6 +28,8 @@ namespace Modelo.PN
                 throw;
             }
         }
+
+        /******************************  Eventos ***************************************/
 
         /*Retorna uma lista de ID de Eventos que a pessoa participa*/
         public static List<int> Pesquisar_Eventos(int id)
@@ -73,6 +77,40 @@ namespace Modelo.PN
                 List<int> Eventos = db.Evento.Where(r => r.Criador == id).Select(x => x.Id).ToList();
 
                 return Eventos;
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+        }
+
+        public static int Pesquisar_Ultimo_Evento()
+        {
+            try
+            {
+                EventosEntities db = new EventosEntities();
+                return db.Evento.Max(r => r.Id);
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        /******************************  Participante ***************************************/
+
+        public static List<Participante> Pesquisar_Convites(int id)
+        {
+            try
+            {
+                EventosEntities db = new EventosEntities();
+
+                /*Where compara o r( da tabela) com o id por parametro
+                 Se for igual, ele seleciona todos os iguais e pega o id e coloca em lista*/
+                List<Participante> Convites = db.Participante.Where(r => r.Id_pessoa == id).ToList();
+
+                return Convites;
             }
             catch (Exception e)
             {

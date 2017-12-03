@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using Modelo.DAO;
 using Modelo.PN;
+using System.Windows.Forms;
 
 namespace Desktop.Controllers
 {
     class EventoController
     {
 
-        public static bool Criar_Reuniao(Evento ev)
+        public static bool Criar_Reuniao(Evento ev, int participante)
         {
             try
             {
@@ -25,8 +26,13 @@ namespace Desktop.Controllers
                     novo_evento.Local = ev.Local;
                     novo_evento.Descricao = ev.Descricao;
                     novo_evento.Data = ev.Data;
-
                     pnCadastro.Inserir_Evento(novo_evento);
+
+                    if(participante > 0)
+                    {
+                        ParticipanteController.Novo_Participante(participante, pnPesquisar.Pesquisar_Ultimo_Evento());
+                        
+                    }
 
 
                     return true;
@@ -35,6 +41,66 @@ namespace Desktop.Controllers
                 return false;
             }
             catch(Exception e)
+            {
+                return false;
+            }
+        }
+
+        public static bool Criar_Palestra(Evento ev)
+        {
+            try
+            {
+                if (ev != null)
+                {
+                    Evento novo_evento = new Evento();
+                    novo_evento.Criador = ev.Criador;
+                    novo_evento.Cancelado = false;
+                    novo_evento.Reuniao = false;
+                    novo_evento.Palestra = true;
+                    novo_evento.Local = ev.Local;
+                    novo_evento.Descricao = ev.Descricao;
+                    novo_evento.Data = ev.Data;
+                    pnCadastro.Inserir_Evento(novo_evento);
+
+                    return true;
+                }
+
+                return false;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public static bool Editar_Palestra(Evento ev)
+        {
+            try
+            {
+                if (ev != null)
+                {
+                    Evento evento_alterado = new Evento();
+                    evento_alterado = pnPesquisar.Pesquisar_Eventos_Id(ev.Id);
+                    if(ev.Criador != 0)
+                        evento_alterado.Criador = ev.Criador;
+
+                    evento_alterado.Cancelado = false;
+                    evento_alterado.Reuniao = false;
+                    evento_alterado.Palestra = true;
+                    if(ev.Local != null)
+                        evento_alterado.Local = ev.Local;
+                    if (ev.Descricao != null)
+                        evento_alterado.Descricao = ev.Descricao;
+                    evento_alterado.Data = ev.Data;
+
+                    pnEditar.Editar_Evento(evento_alterado);
+
+                    return true;
+                }
+
+                return false;
+            }
+            catch (Exception e)
             {
                 return false;
             }
@@ -77,8 +143,11 @@ namespace Desktop.Controllers
                 {
                     Evento evento = new Evento();
                     evento = pnPesquisar.Pesquisar_Eventos_Id(id);
-                    if(evento.Reuniao)
-                        meus_eventos.Add(evento);
+                    if (evento.Reuniao)
+                    {
+                        if(DateTime.Compare(DateTime.Now, evento.Data) <= 0)
+                            meus_eventos.Add(evento);
+                    }
                 }
 
                 return meus_eventos;
@@ -89,6 +158,8 @@ namespace Desktop.Controllers
                 throw;
             }
         }
+
+       
 
     }
 }
