@@ -25,6 +25,7 @@ namespace Modelo.DAO
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Certificado> Certificado { get; set; }
         public virtual DbSet<Evento> Evento { get; set; }
         public virtual DbSet<Horario> Horario { get; set; }
         public virtual DbSet<Palestrante> Palestrante { get; set; }

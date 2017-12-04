@@ -18,6 +18,15 @@ namespace Desktop.Controllers
                 /*Pega a lista de eventos (ids) que a pessoa criou*/
                 List<Participante> convites_pessoa = pnPesquisar.Pesquisar_Convites(pid);
 
+                foreach(Participante c in convites_pessoa)
+                {
+                    if (pnPesquisar.Pesquisar_Eventos_Id(c.Id_eventos).Palestra)
+                    {
+                        convites_pessoa.Remove(c);
+                    }
+                }
+
+
                 return convites_pessoa;
 
             }
@@ -44,6 +53,26 @@ namespace Desktop.Controllers
                 part.Id_pessoa = id;
                 part.Id_eventos = id_evento;
                 part.confirmacao = true;
+
+                pnEditar.Editar_Participante(part);
+
+                return true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public static bool Confirmar_Entrada(int id, int id_evento)
+        {
+            try
+            {
+                Participante part = new Participante();
+                part.Id_pessoa = id;
+                part.Id_eventos = id_evento;
+                part.confirmacao = true;
+                part.entrada = true;
 
                 pnEditar.Editar_Participante(part);
 

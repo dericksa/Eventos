@@ -31,6 +31,23 @@ namespace Modelo.PN
 
         /******************************  Eventos ***************************************/
 
+
+        public static List<Evento> Pesquisar_Todos_Eventos()
+        {
+            try
+            {
+                EventosEntities db = new EventosEntities();
+
+
+                return db.Evento.ToList();
+
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+        }
+
         /*Retorna uma lista de ID de Eventos que a pessoa participa*/
         public static List<int> Pesquisar_Eventos(int id)
         {
@@ -111,6 +128,40 @@ namespace Modelo.PN
                 List<Participante> Convites = db.Participante.Where(r => r.Id_pessoa == id).ToList();
 
                 return Convites;
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+        }
+
+        public static List<Certificado> Pesquisar_Certificados(int id)
+        {
+            try
+            {
+                EventosEntities db = new EventosEntities();
+
+                List<Certificado> Certificados = db.Certificado.Where(r => r.Id == id).ToList();
+
+                return Certificados;
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+        }
+
+        public static List<Participante> Pesquisar_Participantes(int id)
+        {
+            try
+            {
+                EventosEntities db = new EventosEntities();
+
+                /*Where compara o r( da tabela) com o id por parametro
+                 Se for igual, ele seleciona todos os iguais e pega o id e coloca em lista*/
+                List<Participante> Participantes = db.Participante.Where(r => r.Id_eventos == id).ToList();
+
+                return Participantes;
             }
             catch (Exception e)
             {

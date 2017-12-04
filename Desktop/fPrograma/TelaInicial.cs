@@ -32,6 +32,14 @@ namespace Desktop.fPrograma
                 btn_Admin.Visible = true;
                 this.Refresh();
             }
+            else if (PessoaController.is_Professor(id_login))
+            {
+                grp_Horarios.Visible = true;
+            }
+            else if (PessoaController.is_Palestrante(id_login))
+            {
+                grp_Palestra.Visible = true;
+            }
        
 
         }
@@ -158,6 +166,26 @@ namespace Desktop.fPrograma
             {
                 MessageBox.Show("Cadastrou Horario");
             }
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            Evento novo_evento = new Evento();
+
+            novo_evento.Local = txt_Local.Text;
+            novo_evento.Descricao = txt_Desc.Text;
+            novo_evento.Criador = id_login;
+            novo_evento.Data = evt_Data.Value;
+            novo_evento.Palestra = true;
+            novo_evento.Privado = check_Privado.Checked;
+
+            int participante = int.Parse(txt_Convidado.Text);
+
+            if (EventoController.Criar_Palestra(novo_evento, participante))
+            {
+                Console.WriteLine("Cadastrou o evento");
+            }
+
         }
     }
 }

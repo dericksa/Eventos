@@ -31,6 +31,7 @@ namespace Desktop.fCadastro
         {
             comboBoxGrupo.Items.Add("Aluno");
             comboBoxGrupo.Items.Add("Professor");
+            comboBoxGrupo.Items.Add("Palestrante");
             //this.Update();
         }
 
@@ -80,6 +81,9 @@ namespace Desktop.fCadastro
             else if (novo_cadastro.Grupo.Equals("Professor"))
             {
                 novo_cadastro.Departamento = txt_CurDep.Text;
+            }
+            else if (novo_cadastro.Grupo.Equals("Palestrante")){
+                novo_cadastro.Palestrante = true;
             }
 
             if (PessoaController.Cadastro(novo_cadastro))

@@ -22,11 +22,27 @@ namespace Desktop.fAdmin
         public form_Adm()
         {
             InitializeComponent();
+            handle_GrupoBox();
+            handle_PalestraBox();
+            
+        }
+
+        private void handle_PalestraBox()
+        {
+            box_Palestras.Items.Clear();
+            List<Evento> ev = EventoController.Palestras_Nao_Aprovadas();
+            foreach(Evento evento in ev)
+            {
+                box_Palestras.Items.Add(evento.Id);
+            }        
+        }
+
+        private void handle_GrupoBox()
+        {
             box_Perm.Items.Add("Administrador");
             box_Perm.Items.Add("Palestrante");
             box_Perm.Items.Add("Professor");
             box_Perm.Items.Add("Aluno");
-            box_Perm.Items.Add("Organizador");
         }
 
         private void formAdmin_Load(object sender, EventArgs e)
@@ -50,19 +66,12 @@ namespace Desktop.fAdmin
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            Evento novo_evento = new Evento();
-
-            novo_evento.Local = txt_Local.Text;
-            novo_evento.Descricao = txt_Desc.Text;
-            novo_evento.Criador = int.Parse(txt_Palestrante.Text);
-            novo_evento.Data = evt_Data.Value;
-            novo_evento.Palestra = true;
-
-            if (EventoController.Criar_Palestra(novo_evento))
+            Evento ev = new Evento();
+            ev.Id = int.Parse(box_Palestras.SelectedText);
+            if (EventoController.Aprovar_Palestra(ev.Id))
             {
-                Console.WriteLine("Cadastrou o evento");
+                MessageBox.Show("Aprovada");
             }
-
         }
 
         private void grp_Palestra_Enter(object sender, EventArgs e)
@@ -90,11 +99,16 @@ namespace Desktop.fAdmin
                 int id_evento = int.Parse(txt_LeituraEv.Text);
                 int id_pessoa = int.Parse(txt_LeituraId.Text);
                 ParticipanteController.Novo_Participante(id_pessoa, id_evento);
-                if(ParticipanteController.Confirmar_Participacao(id_pessoa, id_evento))
+                if(ParticipanteController.Confirmar_Entrada(id_pessoa, id_evento))
                 {
                     MessageBox.Show("Confirmado");
                 }
              }
+        }
+
+        private void btn_Cert_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

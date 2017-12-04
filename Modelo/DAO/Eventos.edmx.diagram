@@ -4,18 +4,20 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="95b57858dc364b64a9cd25c0ba722c56" Name="Diagram1">
-        <EntityTypeShape EntityType="EventosDBModel.Evento" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="EventosDBModel.Horario" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="EventosDBModel.Palestrante" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EventosDBModel.Participante" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EventosDBModel.Pessoa" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
-        <AssociationConnector Association="EventosDBModel.Criador" ManuallyRouted="false" />
-        <AssociationConnector Association="EventosDBModel.Id_evento" ManuallyRouted="false" />
-        <AssociationConnector Association="EventosDBModel.Id_eventos" ManuallyRouted="false" />
-        <AssociationConnector Association="EventosDBModel.Identificacao" ManuallyRouted="false" />
-        <AssociationConnector Association="EventosDBModel.Id_palestrante" ManuallyRouted="false" />
-        <AssociationConnector Association="EventosDBModel.Id_pessoa" ManuallyRouted="false" />
+      <Diagram DiagramId="dee2018abc374095b0fd03576aaa4547" Name="Diagram1">
+        <EntityTypeShape EntityType="EventosFinalModel.Certificado" Width="1.5" PointX="3" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EventosFinalModel.Evento" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EventosFinalModel.Horario" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EventosFinalModel.Palestrante" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EventosFinalModel.Participante" Width="1.5" PointX="5.25" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="EventosFinalModel.Pessoa" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <AssociationConnector Association="EventosFinalModel.FK__Certificado__Id__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="EventosFinalModel.Criador" ManuallyRouted="false" />
+        <AssociationConnector Association="EventosFinalModel.Id_evento" ManuallyRouted="false" />
+        <AssociationConnector Association="EventosFinalModel.Id_eventos" ManuallyRouted="false" />
+        <AssociationConnector Association="EventosFinalModel.Identificacao" ManuallyRouted="false" />
+        <AssociationConnector Association="EventosFinalModel.Id_palestrante" ManuallyRouted="false" />
+        <AssociationConnector Association="EventosFinalModel.Id_pessoa" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

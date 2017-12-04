@@ -3,6 +3,7 @@
 	[Id_pessoa] INT NOT NULL , 
     [confirmacao] BIT NOT NULL, 
     [Id_eventos] INT NOT NULL, 
+    [entrada] BIT NOT NULL, 
     PRIMARY KEY ([Id_pessoa], [Id_eventos]), 
     CONSTRAINT [Id_pessoa] FOREIGN KEY ([Id_pessoa]) REFERENCES [Pessoa]([Identificacao]) ,
 	CONSTRAINT [Id_eventos] FOREIGN KEY ([Id_eventos]) REFERENCES [Evento]([Id]) 

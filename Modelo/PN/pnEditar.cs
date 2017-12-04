@@ -26,6 +26,7 @@ namespace Modelo.PN
                 evento_alterado.Data = evt.Data;
                 evento_alterado.Criador = evt.Criador;
                 evento_alterado.Cancelado = evt.Cancelado;
+                evento_alterado.Aprovada = evt.Aprovada;
 
                 db.SaveChanges();
 

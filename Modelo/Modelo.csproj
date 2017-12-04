@@ -59,6 +59,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="DAO\Certificado.cs">
+      <DependentUpon>Eventos.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAO\Evento.cs">
       <DependentUpon>Eventos.tt</DependentUpon>
     </Compile>
@@ -111,7 +114,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="DAO\Eventos.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

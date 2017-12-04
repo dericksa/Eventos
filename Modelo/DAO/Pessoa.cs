@@ -33,6 +33,7 @@ namespace Modelo.DAO
         public Nullable<bool> Palestrante { get; set; }
         public Nullable<bool> Organizador { get; set; }
     
+        public virtual Certificado Certificado { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Evento> Evento { get; set; }
         public virtual Horario Horario { get; set; }

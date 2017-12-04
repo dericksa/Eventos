@@ -12,14 +12,11 @@ namespace Modelo.DAO
     using System;
     using System.Collections.Generic;
     
-    public partial class Participante
+    public partial class Certificado
     {
-        public int Id_pessoa { get; set; }
-        public bool confirmacao { get; set; }
-        public int Id_eventos { get; set; }
-        public bool entrada { get; set; }
+        public int Id { get; set; }
+        public int Tempo { get; set; }
     
-        public virtual Evento Evento { get; set; }
         public virtual Pessoa Pessoa { get; set; }
     }
 }

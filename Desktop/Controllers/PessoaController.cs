@@ -53,6 +53,38 @@ namespace Desktop.Controllers
             }
         }
 
+        public static bool is_Professor(int id)
+        {
+            try
+            {
+                if (pnPesquisar.Pesquisar(id).Grupo.Equals("Professor"))
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public static bool is_Palestrante(int id)
+        {
+            try
+            {
+                if (pnPesquisar.Pesquisar(id).Palestrante == true)
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
         public static bool Mudar_Permissao(int id, string perm)
         {
             try

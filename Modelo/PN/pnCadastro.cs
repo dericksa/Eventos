@@ -103,5 +103,24 @@ namespace Modelo.PN
 
         }
 
+        public static bool Inserir_Certificado(Certificado c)
+        {
+            try
+            {
+                EventosEntities db = new EventosEntities();
+
+                db.Certificado.Add(c);
+                db.SaveChanges();
+
+                return true;
+
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+
+        }
+
     }
 }

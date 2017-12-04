@@ -4,7 +4,14 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="EventosDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="EventosFinalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Certificado">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Tempo" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Evento">
           <Key>
             <PropertyRef Name="Id" />
@@ -17,6 +24,9 @@
           <Property Name="Descricao" Type="varchar(max)" Nullable="false" />
           <Property Name="Palestra" Type="bit" Nullable="false" />
           <Property Name="Reuniao" Type="bit" Nullable="false" />
+          <Property Name="Privado" Type="bit" Nullable="false" />
+          <Property Name="Tempo" Type="int" Nullable="false" />
+          <Property Name="Aprovada" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Horario">
           <Key>
@@ -42,6 +52,7 @@
           <Property Name="Id_pessoa" Type="int" Nullable="false" />
           <Property Name="confirmacao" Type="bit" Nullable="false" />
           <Property Name="Id_eventos" Type="int" Nullable="false" />
+          <Property Name="entrada" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Pessoa">
           <Key>
@@ -51,7 +62,7 @@
           <Property Name="Nome" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Senha" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Grupo" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Curso" Type="varchar" MaxLength="50" />
+          <Property Name="Curso" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Departamento" Type="varchar" MaxLength="50" />
           <Property Name="Email" Type="varchar" MaxLength="50" />
           <Property Name="Adm" Type="bit" />
@@ -67,6 +78,18 @@
             </Principal>
             <Dependent Role="Evento">
               <PropertyRef Name="Criador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Certificado__Id__2D27B809">
+          <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="1" />
+          <End Role="Certificado" Type="Self.Certificado" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Pessoa">
+              <PropertyRef Name="Identificacao" />
+            </Principal>
+            <Dependent Role="Certificado">
+              <PropertyRef Name="Id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -130,7 +153,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="EventosDBModelStoreContainer">
+        <EntityContainer Name="EventosFinalModelStoreContainer">
+          <EntitySet Name="Certificado" EntityType="Self.Certificado" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Evento" EntityType="Self.Evento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Horario" EntityType="Self.Horario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Palestrante" EntityType="Self.Palestrante" Schema="dbo" store:Type="Tables" />
@@ -139,6 +163,10 @@
           <AssociationSet Name="Criador" Association="Self.Criador">
             <End Role="Pessoa" EntitySet="Pessoa" />
             <End Role="Evento" EntitySet="Evento" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Certificado__Id__2D27B809" Association="Self.FK__Certificado__Id__2D27B809">
+            <End Role="Pessoa" EntitySet="Pessoa" />
+            <End Role="Certificado" EntitySet="Certificado" />
           </AssociationSet>
           <AssociationSet Name="Id_evento" Association="Self.Id_evento">
             <End Role="Evento" EntitySet="Evento" />
@@ -165,7 +193,15 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="EventosDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="EventosFinalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Certificado">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Tempo" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Pessoa" Relationship="Self.FK__Certificado__Id__2D27B809" FromRole="Certificado" ToRole="Pessoa" />
+        </EntityType>
         <EntityType Name="Evento">
           <Key>
             <PropertyRef Name="Id" />
@@ -178,6 +214,9 @@
           <Property Name="Descricao" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Palestra" Type="Boolean" Nullable="false" />
           <Property Name="Reuniao" Type="Boolean" Nullable="false" />
+          <Property Name="Privado" Type="Boolean" Nullable="false" />
+          <Property Name="Tempo" Type="Int32" Nullable="false" />
+          <Property Name="Aprovada" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Pessoa" Relationship="Self.Criador" FromRole="Evento" ToRole="Pessoa" />
           <NavigationProperty Name="Palestrante" Relationship="Self.Id_evento" FromRole="Evento" ToRole="Palestrante" />
           <NavigationProperty Name="Participante" Relationship="Self.Id_eventos" FromRole="Evento" ToRole="Participante" />
@@ -209,6 +248,7 @@
           <Property Name="Id_pessoa" Type="Int32" Nullable="false" />
           <Property Name="confirmacao" Type="Boolean" Nullable="false" />
           <Property Name="Id_eventos" Type="Int32" Nullable="false" />
+          <Property Name="entrada" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Evento" Relationship="Self.Id_eventos" FromRole="Participante" ToRole="Evento" />
           <NavigationProperty Name="Pessoa" Relationship="Self.Id_pessoa" FromRole="Participante" ToRole="Pessoa" />
         </EntityType>
@@ -220,17 +260,30 @@
           <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Senha" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Grupo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Curso" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Curso" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Departamento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Adm" Type="Boolean" />
           <Property Name="Palestrante" Type="Boolean" />
           <Property Name="Organizador" Type="Boolean" />
+          <NavigationProperty Name="Certificado" Relationship="Self.FK__Certificado__Id__2D27B809" FromRole="Pessoa" ToRole="Certificado" />
           <NavigationProperty Name="Evento" Relationship="Self.Criador" FromRole="Pessoa" ToRole="Evento" />
           <NavigationProperty Name="Horario" Relationship="Self.Identificacao" FromRole="Pessoa" ToRole="Horario" />
           <NavigationProperty Name="Palestrante1" Relationship="Self.Id_palestrante" FromRole="Pessoa" ToRole="Palestrante" />
           <NavigationProperty Name="Participante" Relationship="Self.Id_pessoa" FromRole="Pessoa" ToRole="Participante" />
         </EntityType>
+        <Association Name="FK__Certificado__Id__2D27B809">
+          <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="1" />
+          <End Role="Certificado" Type="Self.Certificado" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Pessoa">
+              <PropertyRef Name="Identificacao" />
+            </Principal>
+            <Dependent Role="Certificado">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="Criador">
           <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="1" />
           <End Role="Evento" Type="Self.Evento" Multiplicity="*" />
@@ -304,11 +357,16 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="EventosEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Certificado" EntityType="Self.Certificado" />
           <EntitySet Name="Evento" EntityType="Self.Evento" />
           <EntitySet Name="Horario" EntityType="Self.Horario" />
           <EntitySet Name="Palestrante" EntityType="Self.Palestrante" />
           <EntitySet Name="Participante" EntityType="Self.Participante" />
           <EntitySet Name="Pessoa" EntityType="Self.Pessoa" />
+          <AssociationSet Name="FK__Certificado__Id__2D27B809" Association="Self.FK__Certificado__Id__2D27B809">
+            <End Role="Pessoa" EntitySet="Pessoa" />
+            <End Role="Certificado" EntitySet="Certificado" />
+          </AssociationSet>
           <AssociationSet Name="Criador" Association="Self.Criador">
             <End Role="Pessoa" EntitySet="Pessoa" />
             <End Role="Evento" EntitySet="Evento" />
@@ -339,9 +397,17 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="EventosDBModelStoreContainer" CdmEntityContainer="EventosEntities">
+        <EntityContainerMapping StorageEntityContainer="EventosFinalModelStoreContainer" CdmEntityContainer="EventosEntities">
+          <EntitySetMapping Name="Certificado">
+            <EntityTypeMapping TypeName="EventosFinalModel.Certificado">
+              <MappingFragment StoreEntitySet="Certificado">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Tempo" ColumnName="Tempo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Evento">
-            <EntityTypeMapping TypeName="EventosDBModel.Evento">
+            <EntityTypeMapping TypeName="EventosFinalModel.Evento">
               <MappingFragment StoreEntitySet="Evento">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Criador" ColumnName="Criador" />
@@ -351,11 +417,14 @@
                 <ScalarProperty Name="Descricao" ColumnName="Descricao" />
                 <ScalarProperty Name="Palestra" ColumnName="Palestra" />
                 <ScalarProperty Name="Reuniao" ColumnName="Reuniao" />
+                <ScalarProperty Name="Privado" ColumnName="Privado" />
+                <ScalarProperty Name="Tempo" ColumnName="Tempo" />
+                <ScalarProperty Name="Aprovada" ColumnName="Aprovada" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Horario">
-            <EntityTypeMapping TypeName="EventosDBModel.Horario">
+            <EntityTypeMapping TypeName="EventosFinalModel.Horario">
               <MappingFragment StoreEntitySet="Horario">
                 <ScalarProperty Name="Identificacao" ColumnName="Identificacao" />
                 <ScalarProperty Name="Horario1" ColumnName="Horario" />
@@ -363,7 +432,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Palestrante">
-            <EntityTypeMapping TypeName="EventosDBModel.Palestrante">
+            <EntityTypeMapping TypeName="EventosFinalModel.Palestrante">
               <MappingFragment StoreEntitySet="Palestrante">
                 <ScalarProperty Name="Id_pessoa" ColumnName="Id_pessoa" />
                 <ScalarProperty Name="confirmacao" ColumnName="confirmacao" />
@@ -372,16 +441,17 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Participante">
-            <EntityTypeMapping TypeName="EventosDBModel.Participante">
+            <EntityTypeMapping TypeName="EventosFinalModel.Participante">
               <MappingFragment StoreEntitySet="Participante">
                 <ScalarProperty Name="Id_pessoa" ColumnName="Id_pessoa" />
                 <ScalarProperty Name="confirmacao" ColumnName="confirmacao" />
                 <ScalarProperty Name="Id_eventos" ColumnName="Id_eventos" />
+                <ScalarProperty Name="entrada" ColumnName="entrada" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Pessoa">
-            <EntityTypeMapping TypeName="EventosDBModel.Pessoa">
+            <EntityTypeMapping TypeName="EventosFinalModel.Pessoa">
               <MappingFragment StoreEntitySet="Pessoa">
                 <ScalarProperty Name="Identificacao" ColumnName="Identificacao" />
                 <ScalarProperty Name="Nome" ColumnName="Nome" />

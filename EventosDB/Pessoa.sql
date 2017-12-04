@@ -4,7 +4,7 @@
     [Nome] VARCHAR(50) NOT NULL, 
     [Senha] VARCHAR(50) NOT NULL, 
     [Grupo] VARCHAR(50) NOT NULL, 
-    [Curso] VARCHAR(50) NULL, 
+    [Curso] VARCHAR(50) NOT NULL, 
     [Departamento] VARCHAR(50) NULL, 
     [Email] VARCHAR(50) NULL, 
     [Adm] BIT NULL, 

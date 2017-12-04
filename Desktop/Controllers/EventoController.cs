@@ -46,7 +46,8 @@ namespace Desktop.Controllers
             }
         }
 
-        public static bool Criar_Palestra(Evento ev)
+
+        public static bool Criar_Palestra(Evento ev, int participante)
         {
             try
             {
@@ -60,7 +61,13 @@ namespace Desktop.Controllers
                     novo_evento.Local = ev.Local;
                     novo_evento.Descricao = ev.Descricao;
                     novo_evento.Data = ev.Data;
+                    novo_evento.Privado = ev.Privado;
                     pnCadastro.Inserir_Evento(novo_evento);
+
+                    if (novo_evento.Privado && participante > 0)
+                    {
+                        ParticipanteController.Novo_Participante(participante, pnPesquisar.Pesquisar_Ultimo_Evento());
+                    }
 
                     return true;
                 }
@@ -81,6 +88,7 @@ namespace Desktop.Controllers
                 {
                     Evento evento_alterado = new Evento();
                     evento_alterado = pnPesquisar.Pesquisar_Eventos_Id(ev.Id);
+
                     if(ev.Criador != 0)
                         evento_alterado.Criador = ev.Criador;
 
@@ -92,6 +100,31 @@ namespace Desktop.Controllers
                     if (ev.Descricao != null)
                         evento_alterado.Descricao = ev.Descricao;
                     evento_alterado.Data = ev.Data;
+                    evento_alterado.Aprovada = ev.Aprovada;
+
+                    pnEditar.Editar_Evento(evento_alterado);
+
+                    return true;
+                }
+
+                return false;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public static bool Aprovar_Palestra(int id)
+        {
+            try
+            {
+                if (id > 0)
+                {
+                    Evento evento_alterado = new Evento();
+                    evento_alterado = pnPesquisar.Pesquisar_Eventos_Id(id);
+
+                    evento_alterado.Aprovada = true;
 
                     pnEditar.Editar_Evento(evento_alterado);
 
@@ -159,7 +192,71 @@ namespace Desktop.Controllers
             }
         }
 
-       
+        public static List<Evento> Palestras_Nao_Aprovadas()
+        {
+            try
+            {
+                List<Evento> eventos_NAprovados = new List<Evento>();
+                List<Evento> eventos = pnPesquisar.Pesquisar_Todos_Eventos();
+
+                foreach (Evento ev in eventos)
+                {
+                    if (!ev.Aprovada)
+                    {
+                        eventos_NAprovados.Add(ev);
+                    }
+                }
+
+                return eventos_NAprovados;
+
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+        }
+
+        public static List<Evento> Palestras_Aprovadas()
+        {
+            try
+            {
+
+                List<Evento> eventos_Aprovados = new List<Evento>();
+                List<Evento> eventos = pnPesquisar.Pesquisar_Todos_Eventos();
+
+                foreach (Evento ev in eventos)
+                {
+                    if (ev.Aprovada)
+                    {
+                        eventos_Aprovados.Add(ev);
+                    }
+                }
+
+                return eventos_Aprovados;
+
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+        }
+
+
+        public static bool Gerar_Certificado(int id_pessoa, int id_evento)
+        {
+            try
+            {
+                Certificado cert = new Certificado();
+                cert.Id = id_pessoa;
+                cert.Tempo = pnPesquisar.Pesquisar_Eventos_Id(id_evento).Tempo;
+
+                pnCadastro.Inserir_Certificado(cert);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
     }
 }

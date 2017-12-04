@@ -29,6 +29,9 @@ namespace Modelo.DAO
         public string Descricao { get; set; }
         public bool Palestra { get; set; }
         public bool Reuniao { get; set; }
+        public bool Privado { get; set; }
+        public int Tempo { get; set; }
+        public bool Aprovada { get; set; }
     
         public virtual Pessoa Pessoa { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
