@@ -67,11 +67,13 @@ namespace Desktop.fAdmin
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             Evento ev = new Evento();
-            ev.Id = int.Parse(box_Palestras.SelectedText);
+            MessageBox.Show(box_Palestras.SelectedItem.ToString());
+            ev.Id = int.Parse(box_Palestras.SelectedItem.ToString());
             if (EventoController.Aprovar_Palestra(ev.Id))
             {
                 MessageBox.Show("Aprovada");
             }
+            handle_PalestraBox();
         }
 
         private void grp_Palestra_Enter(object sender, EventArgs e)
@@ -84,6 +86,9 @@ namespace Desktop.fAdmin
             Evento evento = new Evento();
             evento.Descricao = txt_desceditar.Text;
             evento.Local = txt_localeditar.Text;
+            evento.Data = date_EditarPalestra.Value;
+            evento.Palestra = true;
+            evento.Criador = 0;
             evento.Id = int.Parse(txt_ideditar.Text);
 
             if (EventoController.Editar_Palestra(evento))
@@ -110,7 +115,22 @@ namespace Desktop.fAdmin
         {
             int id_pessoa = int.Parse(txt_id_Cert.Text);
             int id_evento = int.Parse(txt_IdEvCert.Text);
-            EventoController.Gerar_Certificado(id_pessoa, id_evento);
+            if(EventoController.Gerar_Certificado(id_pessoa, id_evento))
+            {
+                MessageBox.Show("Gerou");
+            }
+        }
+
+        private void box_Palestras_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            TelaInicial tela = new TelaInicial();
+            this.Hide();
+            tela.Show();
         }
     }
 }

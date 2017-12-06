@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.TabPage Reunioes;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.box_mReunioes = new System.Windows.Forms.GroupBox();
             this.btn_NovoEvento = new MaterialSkin.Controls.MaterialRaisedButton();
             this.data_MeusEventos = new System.Windows.Forms.DataGridView();
@@ -55,6 +55,8 @@
             this.tab_Inicial = new MaterialSkin.Controls.MaterialTabControl();
             this.tab_Eventos = new System.Windows.Forms.TabPage();
             this.grp_Palestra = new System.Windows.Forms.GroupBox();
+            this.check_Privado = new System.Windows.Forms.CheckBox();
+            this.txt_Convidado = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.btnCadastrar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.txt_Local = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txt_Tempo = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -65,13 +67,11 @@
             this.date_Horario = new System.Windows.Forms.DateTimePicker();
             this.reuniaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.eventosDBDataSet = new Desktop.EventosDBDataSet();
-            this.SeletorTab = new MaterialSkin.Controls.MaterialTabSelector();
             this.reuniaoTableAdapter = new Desktop.EventosDBDataSetTableAdapters.ReuniaoTableAdapter();
             this.eventoTableAdapter = new Desktop.EventosDBDataSet1TableAdapters.EventoTableAdapter();
             this.btn_Admin = new MaterialSkin.Controls.MaterialFlatButton();
             this.participanteTableAdapter = new Desktop.EventosDBDataSet2TableAdapters.ParticipanteTableAdapter();
-            this.txt_Convidado = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.check_Privado = new System.Windows.Forms.CheckBox();
+            this.tab_Geral = new MaterialSkin.Controls.MaterialTabSelector();
             Reunioes = new System.Windows.Forms.TabPage();
             Reunioes.SuspendLayout();
             this.box_mReunioes.SuspendLayout();
@@ -138,14 +138,14 @@
             this.data_MeusEventos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.data_MeusEventos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.data_MeusEventos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.data_MeusEventos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.data_MeusEventos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.data_MeusEventos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.data_MeusEventos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -227,7 +227,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.data_MeusConvites);
-            this.groupBox2.Location = new System.Drawing.Point(-4, 323);
+            this.groupBox2.Location = new System.Drawing.Point(3, 323);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(516, 214);
             this.groupBox2.TabIndex = 1;
@@ -244,14 +244,14 @@
             this.data_MeusConvites.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.data_MeusConvites.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.data_MeusConvites.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.data_MeusConvites.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.data_MeusConvites.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.data_MeusConvites.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.data_MeusConvites.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ideventosDataGridViewTextBoxColumn,
@@ -310,8 +310,8 @@
             // 
             // tab_Inicial
             // 
-            this.tab_Inicial.Controls.Add(Reunioes);
             this.tab_Inicial.Controls.Add(this.tab_Eventos);
+            this.tab_Inicial.Controls.Add(Reunioes);
             this.tab_Inicial.Depth = 0;
             this.tab_Inicial.Location = new System.Drawing.Point(0, 103);
             this.tab_Inicial.MouseState = MaterialSkin.MouseState.HOVER;
@@ -350,6 +350,37 @@
             this.grp_Palestra.TabStop = false;
             this.grp_Palestra.Text = "Cadastrar Palestra";
             this.grp_Palestra.Visible = false;
+            // 
+            // check_Privado
+            // 
+            this.check_Privado.AutoSize = true;
+            this.check_Privado.Location = new System.Drawing.Point(85, 218);
+            this.check_Privado.Name = "check_Privado";
+            this.check_Privado.Size = new System.Drawing.Size(62, 17);
+            this.check_Privado.TabIndex = 29;
+            this.check_Privado.Text = "Privado";
+            this.check_Privado.UseVisualStyleBackColor = true;
+            this.check_Privado.CheckedChanged += new System.EventHandler(this.check_Privado_CheckedChanged);
+            // 
+            // txt_Convidado
+            // 
+            this.txt_Convidado.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_Convidado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txt_Convidado.Depth = 0;
+            this.txt_Convidado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txt_Convidado.Hint = "Convidado";
+            this.txt_Convidado.Location = new System.Drawing.Point(41, 241);
+            this.txt_Convidado.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txt_Convidado.Name = "txt_Convidado";
+            this.txt_Convidado.PasswordChar = '\0';
+            this.txt_Convidado.SelectedText = "";
+            this.txt_Convidado.SelectionLength = 0;
+            this.txt_Convidado.SelectionStart = 0;
+            this.txt_Convidado.Size = new System.Drawing.Size(183, 23);
+            this.txt_Convidado.TabIndex = 28;
+            this.txt_Convidado.TabStop = false;
+            this.txt_Convidado.UseSystemPasswordChar = false;
+            this.txt_Convidado.Visible = false;
             // 
             // btnCadastrar
             // 
@@ -471,17 +502,6 @@
             this.eventosDBDataSet.DataSetName = "EventosDBDataSet";
             this.eventosDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // SeletorTab
-            // 
-            this.SeletorTab.BaseTabControl = this.tab_Inicial;
-            this.SeletorTab.Depth = 0;
-            this.SeletorTab.Location = new System.Drawing.Point(-11, 62);
-            this.SeletorTab.MouseState = MaterialSkin.MouseState.HOVER;
-            this.SeletorTab.Name = "SeletorTab";
-            this.SeletorTab.Size = new System.Drawing.Size(813, 35);
-            this.SeletorTab.TabIndex = 1;
-            this.SeletorTab.Click += new System.EventHandler(this.SeletorTab_Click);
-            // 
             // reuniaoTableAdapter
             // 
             this.reuniaoTableAdapter.ClearBeforeFill = true;
@@ -512,35 +532,17 @@
             // 
             this.participanteTableAdapter.ClearBeforeFill = true;
             // 
-            // txt_Convidado
+            // tab_Geral
             // 
-            this.txt_Convidado.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_Convidado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txt_Convidado.Depth = 0;
-            this.txt_Convidado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txt_Convidado.Hint = "Convidado";
-            this.txt_Convidado.Location = new System.Drawing.Point(41, 241);
-            this.txt_Convidado.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txt_Convidado.Name = "txt_Convidado";
-            this.txt_Convidado.PasswordChar = '\0';
-            this.txt_Convidado.SelectedText = "";
-            this.txt_Convidado.SelectionLength = 0;
-            this.txt_Convidado.SelectionStart = 0;
-            this.txt_Convidado.Size = new System.Drawing.Size(183, 23);
-            this.txt_Convidado.TabIndex = 28;
-            this.txt_Convidado.TabStop = false;
-            this.txt_Convidado.UseSystemPasswordChar = false;
-            this.txt_Convidado.Visible = false;
-            // 
-            // check_Privado
-            // 
-            this.check_Privado.AutoSize = true;
-            this.check_Privado.Location = new System.Drawing.Point(85, 218);
-            this.check_Privado.Name = "check_Privado";
-            this.check_Privado.Size = new System.Drawing.Size(62, 17);
-            this.check_Privado.TabIndex = 29;
-            this.check_Privado.Text = "Privado";
-            this.check_Privado.UseVisualStyleBackColor = true;
+            this.tab_Geral.BaseTabControl = this.tab_Inicial;
+            this.tab_Geral.Depth = 0;
+            this.tab_Geral.Location = new System.Drawing.Point(0, 62);
+            this.tab_Geral.MouseState = MaterialSkin.MouseState.HOVER;
+            this.tab_Geral.Name = "tab_Geral";
+            this.tab_Geral.Size = new System.Drawing.Size(802, 42);
+            this.tab_Geral.TabIndex = 3;
+            this.tab_Geral.Text = "materialTabSelector1";
+            this.tab_Geral.Click += new System.EventHandler(this.tab_Geral_Click);
             // 
             // TelaInicial
             // 
@@ -549,8 +551,8 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 674);
+            this.Controls.Add(this.tab_Geral);
             this.Controls.Add(this.btn_Admin);
-            this.Controls.Add(this.SeletorTab);
             this.Controls.Add(this.tab_Inicial);
             this.Name = "TelaInicial";
             this.Text = "TelaInicial";
@@ -580,7 +582,6 @@
 
         private MaterialSkin.Controls.MaterialTabControl tab_Inicial;
         private System.Windows.Forms.TabPage tab_Eventos;
-        private MaterialSkin.Controls.MaterialTabSelector SeletorTab;
         private System.Windows.Forms.GroupBox groupBox2;
         private EventosDBDataSet eventosDBDataSet;
         private System.Windows.Forms.BindingSource reuniaoBindingSource;
@@ -618,5 +619,6 @@
         private MaterialSkin.Controls.MaterialRaisedButton btnCadastrar;
         private System.Windows.Forms.CheckBox check_Privado;
         private MaterialSkin.Controls.MaterialSingleLineTextField txt_Convidado;
+        private MaterialSkin.Controls.MaterialTabSelector tab_Geral;
     }
 }

@@ -42,7 +42,7 @@ namespace Desktop.Controllers
             }
             catch(Exception e)
             {
-                return false;
+                throw;
             }
         }
 
@@ -76,7 +76,7 @@ namespace Desktop.Controllers
             }
             catch (Exception e)
             {
-                return false;
+                throw;
             }
         }
 
@@ -99,8 +99,9 @@ namespace Desktop.Controllers
                         evento_alterado.Local = ev.Local;
                     if (ev.Descricao != null)
                         evento_alterado.Descricao = ev.Descricao;
-                    evento_alterado.Data = ev.Data;
-                    evento_alterado.Aprovada = ev.Aprovada;
+                    if(ev.Data != null)
+                        evento_alterado.Data = ev.Data;
+                    evento_alterado.Aprovada = true;
 
                     pnEditar.Editar_Evento(evento_alterado);
 

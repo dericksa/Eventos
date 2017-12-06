@@ -178,14 +178,35 @@ namespace Desktop.fPrograma
             novo_evento.Data = evt_Data.Value;
             novo_evento.Palestra = true;
             novo_evento.Privado = check_Privado.Checked;
+            int participante;
 
-            int participante = int.Parse(txt_Convidado.Text);
+            if (check_Privado.Checked)
+                participante = int.Parse(txt_Convidado.Text);
+            else
+                participante = 0;
 
             if (EventoController.Criar_Palestra(novo_evento, participante))
             {
-                Console.WriteLine("Cadastrou o evento");
+                MessageBox.Show("Cadastrou Evento");
             }
 
+        }
+
+        private void tab_Geral_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void check_Privado_CheckedChanged(object sender, EventArgs e)
+        {
+            if (check_Privado.Checked)
+            {
+                txt_Convidado.Visible = true;
+            }
+            else
+            {
+                txt_Convidado.Visible = false;
+            }
         }
     }
 }

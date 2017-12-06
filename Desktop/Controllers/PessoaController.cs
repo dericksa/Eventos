@@ -140,6 +140,8 @@ namespace Desktop.Controllers
                 nova_pessoa.Grupo = cadastro.Grupo;
                 nova_pessoa.Curso = cadastro.Curso;
                 nova_pessoa.Departamento = cadastro.Departamento;
+                nova_pessoa.Palestrante = cadastro.Palestrante;
+                nova_pessoa.Adm = cadastro.Adm;
 
                 pnCadastro.Inserir_Pessoa(nova_pessoa);
 

@@ -42,7 +42,6 @@
             this.txt_LeituraId = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.grp_Palestra = new System.Windows.Forms.GroupBox();
             this.txt_localeditar = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.txt_palestranteditar = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.txt_desceditar = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txt_ideditar = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -51,6 +50,7 @@
             this.box_Palestras = new System.Windows.Forms.ComboBox();
             this.btnVoltar = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
+            this.date_EditarPalestra = new System.Windows.Forms.DateTimePicker();
             this.grp_Perm.SuspendLayout();
             this.box_Cert.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -223,8 +223,8 @@
             // grp_Palestra
             // 
             this.grp_Palestra.BackColor = System.Drawing.SystemColors.Window;
+            this.grp_Palestra.Controls.Add(this.date_EditarPalestra);
             this.grp_Palestra.Controls.Add(this.txt_localeditar);
-            this.grp_Palestra.Controls.Add(this.txt_palestranteditar);
             this.grp_Palestra.Controls.Add(this.materialRaisedButton1);
             this.grp_Palestra.Controls.Add(this.txt_desceditar);
             this.grp_Palestra.Controls.Add(this.txt_ideditar);
@@ -254,25 +254,6 @@
             this.txt_localeditar.TabIndex = 23;
             this.txt_localeditar.TabStop = false;
             this.txt_localeditar.UseSystemPasswordChar = false;
-            // 
-            // txt_palestranteditar
-            // 
-            this.txt_palestranteditar.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_palestranteditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txt_palestranteditar.Depth = 0;
-            this.txt_palestranteditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txt_palestranteditar.Hint = "Palestrante";
-            this.txt_palestranteditar.Location = new System.Drawing.Point(21, 156);
-            this.txt_palestranteditar.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txt_palestranteditar.Name = "txt_palestranteditar";
-            this.txt_palestranteditar.PasswordChar = '\0';
-            this.txt_palestranteditar.SelectedText = "";
-            this.txt_palestranteditar.SelectionLength = 0;
-            this.txt_palestranteditar.SelectionStart = 0;
-            this.txt_palestranteditar.Size = new System.Drawing.Size(166, 23);
-            this.txt_palestranteditar.TabIndex = 25;
-            this.txt_palestranteditar.TabStop = false;
-            this.txt_palestranteditar.UseSystemPasswordChar = false;
             // 
             // materialRaisedButton1
             // 
@@ -354,6 +335,7 @@
             this.box_Palestras.Name = "box_Palestras";
             this.box_Palestras.Size = new System.Drawing.Size(121, 21);
             this.box_Palestras.TabIndex = 22;
+            this.box_Palestras.SelectedIndexChanged += new System.EventHandler(this.box_Palestras_SelectedIndexChanged);
             // 
             // btnVoltar
             // 
@@ -371,6 +353,7 @@
             this.btnVoltar.TabIndex = 25;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = false;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // materialDivider1
             // 
@@ -381,6 +364,13 @@
             this.materialDivider1.Name = "materialDivider1";
             this.materialDivider1.Size = new System.Drawing.Size(502, 1);
             this.materialDivider1.TabIndex = 24;
+            // 
+            // date_EditarPalestra
+            // 
+            this.date_EditarPalestra.Location = new System.Drawing.Point(21, 169);
+            this.date_EditarPalestra.Name = "date_EditarPalestra";
+            this.date_EditarPalestra.Size = new System.Drawing.Size(166, 20);
+            this.date_EditarPalestra.TabIndex = 25;
             // 
             // form_Adm
             // 
@@ -428,9 +418,9 @@
         private MaterialSkin.Controls.MaterialFlatButton btnVoltar;
         private MaterialSkin.Controls.MaterialDivider materialDivider1;
         private MaterialSkin.Controls.MaterialSingleLineTextField txt_localeditar;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txt_palestranteditar;
         private MaterialSkin.Controls.MaterialSingleLineTextField txt_desceditar;
         private MaterialSkin.Controls.MaterialSingleLineTextField txt_LeituraEv;
         private System.Windows.Forms.ComboBox box_Palestras;
+        private System.Windows.Forms.DateTimePicker date_EditarPalestra;
     }
 }

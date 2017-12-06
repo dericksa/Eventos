@@ -61,8 +61,8 @@
           <Property Name="Identificacao" Type="int" Nullable="false" />
           <Property Name="Nome" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Senha" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Grupo" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Curso" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Grupo" Type="varchar" MaxLength="50" />
+          <Property Name="Curso" Type="varchar" MaxLength="50" />
           <Property Name="Departamento" Type="varchar" MaxLength="50" />
           <Property Name="Email" Type="varchar" MaxLength="50" />
           <Property Name="Adm" Type="bit" />
@@ -259,8 +259,8 @@
           <Property Name="Identificacao" Type="Int32" Nullable="false" />
           <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Senha" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Grupo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Curso" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Grupo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Curso" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Departamento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Adm" Type="Boolean" />

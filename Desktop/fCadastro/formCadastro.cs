@@ -32,6 +32,7 @@ namespace Desktop.fCadastro
             comboBoxGrupo.Items.Add("Aluno");
             comboBoxGrupo.Items.Add("Professor");
             comboBoxGrupo.Items.Add("Palestrante");
+            comboBoxGrupo.Items.Add("Admin");
             //this.Update();
         }
 
