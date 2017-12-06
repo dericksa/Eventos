@@ -47,7 +47,7 @@ namespace Desktop.Controllers
                 }
                 return false;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }
@@ -63,7 +63,7 @@ namespace Desktop.Controllers
                 }
                 return false;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }
@@ -79,7 +79,7 @@ namespace Desktop.Controllers
                 }
                 return false;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }

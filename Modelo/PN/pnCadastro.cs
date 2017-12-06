@@ -39,7 +39,7 @@ namespace Modelo.PN
                 return true;
 
             }
-            catch(Exception e)
+            catch(Exception)
             {
                 throw;
             }
@@ -58,7 +58,7 @@ namespace Modelo.PN
                 return true;
 
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw;
             }
@@ -77,7 +77,7 @@ namespace Modelo.PN
                 return true;
 
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw;
             }
@@ -96,7 +96,7 @@ namespace Modelo.PN
                 return true;
 
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw;
             }
@@ -115,7 +115,7 @@ namespace Modelo.PN
                 return true;
 
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw;
             }

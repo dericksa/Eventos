@@ -42,7 +42,7 @@ namespace Modelo.PN
                 return db.Evento.ToList();
 
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw;
             }
@@ -59,7 +59,7 @@ namespace Modelo.PN
                return db.Participante.Where(r => r.Id_pessoa == id).Select(x => x.Id_eventos).ToList();
 
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw;
             }
@@ -76,7 +76,7 @@ namespace Modelo.PN
 
                 return evento;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw;
             }
@@ -95,7 +95,7 @@ namespace Modelo.PN
 
                 return Eventos;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw;
             }
@@ -129,7 +129,7 @@ namespace Modelo.PN
 
                 return Convites;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw;
             }
@@ -145,7 +145,7 @@ namespace Modelo.PN
 
                 return Certificados;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw;
             }
@@ -163,7 +163,7 @@ namespace Modelo.PN
 
                 return Participantes;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw;
             }

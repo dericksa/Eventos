@@ -40,7 +40,7 @@ namespace Desktop.Controllers
 
                 return false;
             }
-            catch(Exception e)
+            catch(Exception)
             {
                 throw;
             }
@@ -74,7 +74,7 @@ namespace Desktop.Controllers
 
                 return false;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw;
             }
@@ -110,7 +110,7 @@ namespace Desktop.Controllers
 
                 return false;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }
@@ -134,7 +134,7 @@ namespace Desktop.Controllers
 
                 return false;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }
@@ -157,7 +157,7 @@ namespace Desktop.Controllers
                 return false;
 
             }
-            catch(Exception e)
+            catch(Exception)
             {
                 return false;
             }
@@ -187,7 +187,7 @@ namespace Desktop.Controllers
                 return meus_eventos;
                 
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw;
             }
@@ -211,7 +211,7 @@ namespace Desktop.Controllers
                 return eventos_NAprovados;
 
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw;
             }
@@ -236,7 +236,7 @@ namespace Desktop.Controllers
                 return eventos_Aprovados;
 
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw;
             }

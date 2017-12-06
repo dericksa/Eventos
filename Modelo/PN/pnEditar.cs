@@ -33,7 +33,7 @@ namespace Modelo.PN
                 return true;
 
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }
@@ -64,7 +64,7 @@ namespace Modelo.PN
                 return true;
 
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }
@@ -88,7 +88,7 @@ namespace Modelo.PN
                 return true;
 
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }
