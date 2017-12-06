@@ -108,7 +108,9 @@ namespace Desktop.fAdmin
 
         private void btn_Cert_Click(object sender, EventArgs e)
         {
-
+            int id_pessoa = int.Parse(txt_id_Cert.Text);
+            int id_evento = int.Parse(txt_IdEvCert.Text);
+            EventoController.Gerar_Certificado(id_pessoa, id_evento);
         }
     }
 }

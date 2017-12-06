@@ -34,7 +34,7 @@
             this.txt_ID = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.box_Cert = new System.Windows.Forms.GroupBox();
             this.btn_Cert = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialSingleLineTextField1 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txt_IdEvCert = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txt_id_Cert = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_LeituraEv = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -112,7 +112,7 @@
             // 
             this.box_Cert.BackColor = System.Drawing.SystemColors.Window;
             this.box_Cert.Controls.Add(this.btn_Cert);
-            this.box_Cert.Controls.Add(this.materialSingleLineTextField1);
+            this.box_Cert.Controls.Add(this.txt_IdEvCert);
             this.box_Cert.Controls.Add(this.txt_id_Cert);
             this.box_Cert.Location = new System.Drawing.Point(12, 294);
             this.box_Cert.Name = "box_Cert";
@@ -134,20 +134,20 @@
             this.btn_Cert.UseVisualStyleBackColor = true;
             this.btn_Cert.Click += new System.EventHandler(this.btn_Cert_Click);
             // 
-            // materialSingleLineTextField1
+            // txt_IdEvCert
             // 
-            this.materialSingleLineTextField1.Depth = 0;
-            this.materialSingleLineTextField1.Hint = "ID do Evento";
-            this.materialSingleLineTextField1.Location = new System.Drawing.Point(18, 78);
-            this.materialSingleLineTextField1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField1.Name = "materialSingleLineTextField1";
-            this.materialSingleLineTextField1.PasswordChar = '\0';
-            this.materialSingleLineTextField1.SelectedText = "";
-            this.materialSingleLineTextField1.SelectionLength = 0;
-            this.materialSingleLineTextField1.SelectionStart = 0;
-            this.materialSingleLineTextField1.Size = new System.Drawing.Size(166, 23);
-            this.materialSingleLineTextField1.TabIndex = 4;
-            this.materialSingleLineTextField1.UseSystemPasswordChar = false;
+            this.txt_IdEvCert.Depth = 0;
+            this.txt_IdEvCert.Hint = "ID do Evento";
+            this.txt_IdEvCert.Location = new System.Drawing.Point(18, 78);
+            this.txt_IdEvCert.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txt_IdEvCert.Name = "txt_IdEvCert";
+            this.txt_IdEvCert.PasswordChar = '\0';
+            this.txt_IdEvCert.SelectedText = "";
+            this.txt_IdEvCert.SelectionLength = 0;
+            this.txt_IdEvCert.SelectionStart = 0;
+            this.txt_IdEvCert.Size = new System.Drawing.Size(166, 23);
+            this.txt_IdEvCert.TabIndex = 4;
+            this.txt_IdEvCert.UseSystemPasswordChar = false;
             // 
             // txt_id_Cert
             // 
@@ -415,7 +415,7 @@
         private System.Windows.Forms.ComboBox box_Perm;
         private System.Windows.Forms.GroupBox box_Cert;
         private MaterialSkin.Controls.MaterialRaisedButton btn_Cert;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField1;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txt_IdEvCert;
         private MaterialSkin.Controls.MaterialSingleLineTextField txt_id_Cert;
         private System.Windows.Forms.GroupBox groupBox1;
         private MaterialSkin.Controls.MaterialRaisedButton btn_Confirmar;
