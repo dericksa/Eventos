@@ -251,6 +251,8 @@ namespace Desktop.Controllers
                 cert.Tempo = pnPesquisar.Pesquisar_Eventos_Id(id_evento).Tempo;
 
                 pnCadastro.Inserir_Certificado(cert);
+
+                return true;
             }
             catch (Exception)
             {
